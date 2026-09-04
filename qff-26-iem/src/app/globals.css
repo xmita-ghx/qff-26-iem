@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0D031A;
+    --foreground: #FFFFFF;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-urbanist), sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pure-white to-accent-lavender;
+  }
+
+  .glass-panel {
+    @apply bg-surface/40 backdrop-blur-md border border-accent-glow/20 shadow-[0_0_15px_rgba(157,78,221,0.1)];
+  }
+
+  .glow-hover {
+    @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,78,221,0.5)] hover:border-accent-glow/50;
+  }
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D031A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #240A47;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7B2CBF;
+}
