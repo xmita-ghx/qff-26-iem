@@ -23,9 +23,14 @@ export const Hero = () => {
           <h2 className="font-anton text-4xl md:text-6xl text-white mt-3 uppercase">
             2026
           </h2>
-          <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] mt-2 uppercase">
-            AT IEM
-          </h3>
+          <div className="flex items-center mt-2">
+            <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] uppercase">
+              AT IEM
+            </h3>
+            <div className="w-14 h-14 md:w-16 md:h-16 inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 relative overflow-hidden flex-shrink-0 align-middle ml-4">
+              <img src="/logos/qiskit-official.png" alt="Qiskit Official Logo" className="object-contain w-10 h-10 md:w-12 md:h-12" />
+            </div>
+          </div>
 
           <p className="font-urbanist text-left max-w-lg text-white/85 text-lg mt-6 leading-relaxed">
             <strong className="block mb-2 text-accent-lavender text-xl font-medium">Chi(r)ps: A Decade of Harmony on the Cloud.</strong>

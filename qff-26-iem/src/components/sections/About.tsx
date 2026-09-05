@@ -31,6 +31,11 @@ export const About = () => {
                 By connecting advanced hardware engineering with collaborative growth, QFF26 celebrates a decade of cloud quantum computing as a shared flight path: from early prototypes to frontier processors, from isolated labs to a global chorus of students, researchers, and developers.
               </p>
             </div>
+
+            {/* Official Birds/Logo Sticker Slot */}
+            <div className="w-full max-w-xs md:max-w-sm h-32 md:h-40 my-8 flex items-center justify-center border border-dashed border-white/20 rounded-xl bg-white/5 relative overflow-hidden">
+              <img src="/logos/qff-birds-sticker.png" alt="QFF Birds Sticker" className="object-contain w-full h-full" />
+            </div>
           </motion.div>
         </div>
       </div>
