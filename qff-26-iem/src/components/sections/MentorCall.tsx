@@ -25,16 +25,18 @@ export const MentorCall = () => {
               </span>
             </div>
 
-            <h2 className="font-anton text-4xl md:text-5xl uppercase tracking-wider mb-6">
-              <span className="text-accent-lavender">⟨</span> Call for Mentors <span className="text-accent-lavender">|⟩</span>
+            <h2 className="text-4xl md:text-5xl tracking-wider mb-6 flex justify-center items-center">
+              <span className="font-montserrat font-light text-accent-lavender mr-2">|</span>
+              <span className="font-anton uppercase">CALL FOR MENTORS</span>
+              <span className="font-montserrat font-light text-accent-lavender ml-2">⟩</span>
             </h2>
 
             <p className="text-lg text-pure-white/80 max-w-2xl mx-auto mb-10">
-              Are you experienced in quantum computing, Qiskit, or quantum algorithms? Join us as a mentor to guide teams, review projects, and share your expertise with the next generation of quantum developers.
+              Are you experienced in quantum computing, Qiskit, or quantum machine learning? Join us as a mentor to guide teams, review projects, and share your expertise with the next generation of quantum developers. Please note that only students of IEM Kolkata can apply to be a mentor.
             </p>
 
-            <Button variant="primary" className="text-lg px-10 py-4 font-bold shadow-[0_0_30px_rgba(157,78,221,0.4)]">
-              Apply to Mentor
+            <Button variant="ket" className="mx-auto">
+              |APPLY AS MENTOR⟩
             </Button>
           </GlassCard>
         </motion.div>

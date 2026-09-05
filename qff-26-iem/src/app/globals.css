@@ -10,11 +10,19 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(157, 78, 221, 0.12) 0px,
+      rgba(157, 78, 221, 0.26) 24px,
+      rgba(60, 9, 108, 0.92) 48px,
+      rgba(36, 0, 70, 1) 72px
+    ),
+    linear-gradient(180deg, #3c096c 0%, #240046 50%, #10002b 100%);
+  color: #ffffff;
   font-family: var(--font-urbanist), sans-serif;
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 @layer utilities {
@@ -47,4 +55,18 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #7B2CBF;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(224, 170, 255, 0.3);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(224, 170, 255, 0.6);
 }

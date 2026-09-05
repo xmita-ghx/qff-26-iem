@@ -23,12 +23,12 @@ export const HeroQuantumCanvas: React.FC = () => {
     window.addEventListener("resize", handleResize);
 
     // Dynamic flocking birds
-    const birds = Array.from({ length: 35 }, () => ({
+    const birds = Array.from({ length: 45 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       vx: (Math.random() - 0.3) * 1.5 - 0.5,
       vy: -Math.random() * 1.2 - 0.5,
-      size: Math.random() * 4 + 4,
+      size: Math.random() * 8 + 10,
       flapSpeed: Math.random() * 0.15 + 0.08,
       flapPhase: Math.random() * Math.PI * 2,
     }));
@@ -40,8 +40,11 @@ export const HeroQuantumCanvas: React.FC = () => {
 
       // 1. Rotating Dilution Refrigerator (Cryostat) Wireframe
       rotationAngle += 0.008;
-      const centerX = width * 0.65;
+      const centerX = width * 0.5;
       const startY = height * 0.08;
+
+      ctx.shadowColor = "#E0AAFF";
+      ctx.shadowBlur = 10;
 
       const tiers = [
         { radius: 110, y: startY },
@@ -52,14 +55,15 @@ export const HeroQuantumCanvas: React.FC = () => {
         { radius: 28, y: startY + 460 },
       ];
 
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.85)";
-      ctx.lineWidth = 1;
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.95)";
+      ctx.lineWidth = 2.0;
 
       // Central axis rod
       ctx.beginPath();
       ctx.moveTo(centerX, startY - 40);
       ctx.lineTo(centerX, startY + 490);
-      ctx.strokeStyle = "rgba(224, 170, 255, 0.4)";
+      ctx.strokeStyle = "rgba(224, 170, 255, 0.7)";
+      ctx.lineWidth = 1.4;
       ctx.stroke();
 
       // Plates and rings
@@ -68,7 +72,8 @@ export const HeroQuantumCanvas: React.FC = () => {
         ctx.translate(centerX, tier.y);
         ctx.beginPath();
         ctx.ellipse(0, 0, tier.radius, tier.radius * 0.28, 0, 0, Math.PI * 2);
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.75)";
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.95)";
+        ctx.lineWidth = 2.0;
         ctx.stroke();
 
         // Inner disc
@@ -86,7 +91,8 @@ export const HeroQuantumCanvas: React.FC = () => {
           ctx.beginPath();
           ctx.moveTo(0, 0);
           ctx.lineTo(px, py);
-          ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
+          ctx.strokeStyle = "rgba(224, 170, 255, 0.7)";
+          ctx.lineWidth = 1.4;
           ctx.stroke();
         }
         ctx.restore();
@@ -106,7 +112,8 @@ export const HeroQuantumCanvas: React.FC = () => {
             ctx.moveTo(x1, y1);
             const cx = (x1 + x2) / 2 + Math.sin(rotationAngle * 2 + l) * 12;
             ctx.quadraticCurveTo(cx, (y1 + y2) / 2, x2, y2);
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.45)";
+            ctx.strokeStyle = "rgba(224, 170, 255, 0.7)";
+            ctx.lineWidth = 1.4;
             ctx.stroke();
           }
         }
@@ -124,6 +131,17 @@ export const HeroQuantumCanvas: React.FC = () => {
 
       // 2. White Flocking Silhouette Birds
       birds.forEach((b) => {
+        // Curved trajectories and upward drifts around the perimeter
+        b.vx += (Math.random() - 0.5) * 0.05; // slight random wander instead of pulling to center
+        b.vy -= 0.01; // upward drift
+
+        // limit speed
+        const speed = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+        if (speed > 2) {
+            b.vx = (b.vx / speed) * 2;
+            b.vy = (b.vy / speed) * 2;
+        }
+
         b.x += b.vx;
         b.y += b.vy;
         b.flapPhase += b.flapSpeed;
@@ -139,8 +157,12 @@ export const HeroQuantumCanvas: React.FC = () => {
 
         ctx.save();
         ctx.translate(b.x, b.y);
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.85)";
-        ctx.lineWidth = 1.2;
+
+        // Disable shadow for birds for performance and clarity
+        ctx.shadowBlur = 0;
+
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.lineWidth = 2.4;
         ctx.beginPath();
         // V-wing bird silhouette
         ctx.moveTo(-b.size, flap * b.size);

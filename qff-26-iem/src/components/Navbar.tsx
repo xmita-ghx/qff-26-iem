@@ -46,7 +46,7 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button variant="ket">Register</Button>
+          <Button variant="ket">REGISTER</Button>
         </div>
 
         {/* Mobile Toggle */}
@@ -71,8 +71,8 @@ export const Navbar = () => {
               {route.name}
             </a>
           ))}
-          <Button variant="ket" className="w-full mt-4">
-            Register Now
+          <Button variant="ket" className="w-full mt-4 justify-center">
+            REGISTER
           </Button>
         </div>
       )}
