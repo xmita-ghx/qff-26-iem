@@ -6,6 +6,8 @@ import { MentorCall } from "@/components/sections/MentorCall";
 import { Tracks } from "@/components/sections/Tracks";
 import { Schedule } from "@/components/sections/Schedule";
 import { Partners } from "@/components/sections/Partners";
+import { Team } from "@/components/sections/Team";
+import { Registrations } from "@/components/sections/Registrations";
 import { QuantumField } from "@/components/canvas/QuantumField";
 
 export default function Home() {
@@ -20,9 +22,11 @@ export default function Home() {
       {/* Sections */}
       <Hero />
       <About />
-      <MentorCall />
       <Tracks />
       <Schedule />
+      <MentorCall />
+      <Team />
+      <Registrations />
       <Partners />
 
       {/* Footer */}

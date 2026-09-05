@@ -15,6 +15,20 @@ export const Schedule = () => {
           <h2 className="font-anton text-4xl md:text-5xl uppercase tracking-wider mb-4">
             Event <span className="text-accent-lavender">Schedule</span>
           </h2>
+          <div className="mt-8 flex gap-6 justify-center">
+            <div className="flex flex-col">
+              <span className="font-anton text-4xl text-accent-glow">3</span>
+              <span className="text-sm text-pure-white/60 uppercase tracking-widest mt-1">Days</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-anton text-4xl text-accent-glow">4+</span>
+              <span className="text-sm text-pure-white/60 uppercase tracking-widest mt-1">Tracks</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-anton text-4xl text-accent-glow">100+</span>
+              <span className="text-sm text-pure-white/60 uppercase tracking-widest mt-1">Attendees</span>
+            </div>
+          </div>
         </div>
 
         {/* Day Tabs */}
@@ -35,11 +49,9 @@ export const Schedule = () => {
         </div>
 
         {/* Schedule List */}
-        <GlassCard className="p-8 relative">
+        <GlassCard className="p-8 relative max-h-[600px] overflow-y-auto custom-scrollbar">
           {/* Vertical Timeline Track */}
           <div className="absolute left-10 md:left-40 top-8 bottom-8 w-1 bg-gradient-to-b from-[#9D4EDD] via-[#E0AAFF] to-[#3C096C] rounded-full hidden sm:block">
-            {/* Dynamic scrubber thumb (static for now, could be animated based on scroll) */}
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_#FFFFFF]"></div>
           </div>
 
           <AnimatePresence mode="wait">
@@ -62,7 +74,10 @@ export const Schedule = () => {
                     </span>
                   </div>
                   <div>
-                    <h4 className="text-2xl font-anton uppercase text-white tracking-wide">{event.title}</h4>
+                    <h4 className="text-xl md:text-2xl font-anton uppercase text-white tracking-wide">{event.title}</h4>
+                    {event.description && (
+                      <p className="text-sm text-pure-white/70 mt-2 font-urbanist">{event.description}</p>
+                    )}
                   </div>
                 </div>
               ))}

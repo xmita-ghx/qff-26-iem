@@ -28,12 +28,13 @@ export const Hero = () => {
           </h3>
 
           <p className="font-urbanist text-left max-w-lg text-white/85 text-lg mt-6 leading-relaxed">
-            Join the global quantum computing community at IEM. Explore, learn, and build the future of quantum technology.
+            <strong className="block mb-2 text-accent-lavender text-xl font-medium">Chi(r)ps: A Decade of Harmony on the Cloud.</strong>
+            This year’s QFF theme at IEM honors IBM’s 2026 milestone—ten years of quantum computing on the cloud! It creatively connects to a powerful vibrant metaphor: IBM’s quantum chips themselves are named after birds, reflecting how engineers actually tune these machines. In celebrating this milestone, the theme highlights both the evolution of quantum hardware and the flourishing of the global quantum community.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
-            <Button variant="ket" className="font-anton uppercase px-8 py-3 rounded-full">
-              ⟨ REGISTER NOW |⟩
+            <Button variant="ket" className="px-8 py-3 rounded-full">
+              REGISTER NOW
             </Button>
           </div>
 

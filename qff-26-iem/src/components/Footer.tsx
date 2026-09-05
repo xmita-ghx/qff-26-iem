@@ -21,21 +21,23 @@ export const Footer = () => {
               <li><a href="#schedule" className="hover:text-pure-white transition-colors">Schedule</a></li>
               <li><a href="#tracks" className="hover:text-pure-white transition-colors">Tracks</a></li>
               <li><a href="#mentor" className="hover:text-pure-white transition-colors">Call for Mentors</a></li>
+              <li><a href="#team" className="hover:text-pure-white transition-colors">Team</a></li>
+              <li><a href="#registrations" className="hover:text-pure-white transition-colors">Registrations</a></li>
             </ul>
           </div>
           <div>
             <h4 className="font-bold mb-4 text-accent-lavender">Community</h4>
             <ul className="space-y-2 text-pure-white/70">
               <li><a href="#" className="hover:text-pure-white transition-colors">Discord Server</a></li>
-              <li><a href="#" className="hover:text-pure-white transition-colors">GitHub Repository</a></li>
               <li><a href="#" className="hover:text-pure-white transition-colors">Code of Conduct</a></li>
+              <li><a href="#" className="hover:text-pure-white transition-colors">Whatsapp Community</a></li>
             </ul>
+            <p className="text-xs text-pure-white/50 mt-2 font-urbanist">(we will provide the invitation after registration)</p>
           </div>
         </div>
 
-        <div className="border-t border-surface/50 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-pure-white/50">
-          <p>© 2026 {EVENT_DETAILS.name}. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Open Source & Community Driven.</p>
+        <div className="border-t border-surface/50 pt-8 flex flex-col items-center justify-center text-sm text-pure-white/50 text-center">
+          <p>Qiskit and Qiskit Fall Fest are IBM marks. This event is organized by IEM QC CoE at IEM, Kolkata.</p>
         </div>
       </div>
     </footer>

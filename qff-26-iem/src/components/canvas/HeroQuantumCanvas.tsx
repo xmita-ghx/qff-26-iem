@@ -131,8 +131,8 @@ export const HeroQuantumCanvas: React.FC = () => {
 
       // 2. White Flocking Silhouette Birds
       birds.forEach((b) => {
-        // Curved trajectories and upward drifts around the cryostat
-        b.vx += (centerX - b.x) * 0.0005; // pull towards center
+        // Curved trajectories and upward drifts around the perimeter
+        b.vx += (Math.random() - 0.5) * 0.05; // slight random wander instead of pulling to center
         b.vy -= 0.01; // upward drift
 
         // limit speed

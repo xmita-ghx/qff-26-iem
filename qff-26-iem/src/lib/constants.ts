@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export const EVENT_DETAILS = {
   name: "Qiskit Fall Fest 2026 at IEM",
   subTheme: "Century of Quantum",
-  organizers: ["IEM Centre of Excellence", "QuantCom", "UEM", "IBM Quantum"],
+  organizers: ["IEM", "IEM Centre of Excellence", "QuantCom", "UEM", "IBM Quantum"],
   dates: "November 9–10, 2026",
   mentorDeadline: "September 25, 2026",
 };
@@ -25,22 +25,23 @@ export const SCHEDULE = [
   {
     date: "NOV 9",
     events: [
-      { time: "10:00 AM", title: "IBM KEYNOTE" },
-      { time: "11:30 AM", title: "QISKIT 101" },
+      { time: "11:00 AM", title: "IBM SPEAKER", description: "Session 1: Talk + Workshop (Quantum Computing Introduction + Qiskit 101)" },
+      { time: "02:00 PM", title: "BREAK", description: "Light Lunch + Networking (30-minute light lunch + networking break)" },
+      { time: "02:30 PM", title: "DR. PRITHWINEEL PAUL", description: "Session 2: QML Introduction Talk + Workshop (On-site session covering QML fundamentals)" },
     ],
   },
   {
     date: "NOV 10",
     events: [
-      { time: "10:00 AM", title: "DR. PRITHWINEEL PAUL QML" },
-      { time: "02:00 PM", title: "DR. SUBRATA CHAKRABORTY HARDWARE" },
+      { time: "07:00 PM", title: "DR. SUBRATA CHAKRABORTY", description: "Session 1: Talk (Chips Hardware deep dive)" },
+      { time: "09:00 PM", title: "BREAK", description: "Networking Session (30-minute networking break)" },
+      { time: "09:30 PM", title: "OUR SPONSOR", description: "Challenge Kickoff (Sponsor Challenge Kickoff)" },
     ],
   },
   {
     date: "NOV 11",
     events: [
-      { time: "10:00 AM", title: "SPONSOR CHALLENGE KICKOFF" },
-      { time: "11:00 AM", title: "24-HR HACKATHON" },
+      { time: "10:00 PM", title: "OUR SPONSOR", description: "Challenge (Sponsor Challenge: Participants submit solutions/ideas; prizes awarded based on results. Challenge ends, 3 winners announced, top 5 receive recognition, and leaderboard released)" },
     ],
   },
 ];
@@ -65,8 +66,8 @@ export const TRACKS = [
 ];
 
 export const PARTNERS = [
-  { name: "QuantCom", logo: "/logos/quantcom.svg" },
-  { name: "IEM Centre of Excellence", logo: "/logos/iem.svg" },
-  { name: "UEM", logo: "/logos/uem.svg" },
-  { name: "IBM Quantum", logo: "/logos/ibm-quantum.svg" },
+  { name: "QuantCom", logo: "/logos/quantcom.png" },
+  { name: "IEM Centre of Excellence", logo: "/logos/iem.png" },
+  { name: "UEM", logo: "/logos/uem.png" },
+  { name: "IBM Quantum", logo: "/logos/ibm-quantum.png" },
 ];

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Urbanist } from "next/font/google";
+import { Anton, Urbanist, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const anton = Anton({
@@ -12,6 +12,12 @@ const anton = Anton({
 const urbanist = Urbanist({
   subsets: ["latin"],
   variable: "--font-urbanist",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${anton.variable} ${urbanist.variable} antialiased bg-deep-base text-pure-white`}
+        className={`${anton.variable} ${urbanist.variable} ${montserrat.variable} antialiased bg-deep-base text-pure-white`}
       >
         {children}
       </body>
