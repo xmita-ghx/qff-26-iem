@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { EVENT_DETAILS } from "@/lib/constants";
 
@@ -13,6 +15,17 @@ export const Footer = () => {
             <p className="text-pure-white/70 max-w-sm">
               The Century of Quantum. Hosted at IEM in collaboration with leading academic and industry partners.
             </p>
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-accent-glow/50 bg-surface/60 shadow-[0_0_15px_rgba(157,78,221,0.4)] flex items-center justify-center mt-4 relative">
+              <img
+                src="/logos/qff-logo.png"
+                alt="QFF Circular Logo"
+                className="object-cover w-full h-full"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+              <span className="absolute inset-0 flex items-center justify-center font-anton text-xs text-pure-white/50">QFF</span>
+            </div>
           </div>
           <div>
             <h4 className="font-bold mb-4 text-accent-lavender">Quick Links</h4>
@@ -30,7 +43,7 @@ export const Footer = () => {
             <ul className="space-y-2 text-pure-white/70">
               <li><a href="#" className="hover:text-pure-white transition-colors">Discord Server</a></li>
               <li><a href="#" className="hover:text-pure-white transition-colors">Code of Conduct</a></li>
-              <li><a href="#" className="hover:text-pure-white transition-colors">Whatsapp Community</a></li>
+              <li><a href="#" className="hover:text-pure-white transition-colors">WhatsApp Community</a></li>
             </ul>
             <p className="text-xs text-pure-white/50 mt-2 font-urbanist">(we will provide the invitation after registration)</p>
           </div>

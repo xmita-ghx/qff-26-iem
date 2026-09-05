@@ -10,38 +10,38 @@ export const EVENT_DETAILS = {
   subTheme: "Century of Quantum",
   organizers: ["IEM", "IEM Centre of Excellence", "QuantCom", "UEM", "IBM Quantum"],
   dates: "November 9–10, 2026",
-  mentorDeadline: "September 25, 2026",
+  mentorDeadline: "October 2, 2026",
 };
 
 export const ROUTES = [
-  { name: "Register Now", href: "#register" },
-  { name: "Apply as Mentor", href: "#mentor" },
-  { name: "Explore Tracks", href: "#tracks" },
+  { name: "Register Now", href: "#registrations" },
   { name: "View Schedule", href: "#schedule" },
+  { name: "Apply as Mentor", href: "#mentor" },
   { name: "Join Discord", href: "#discord" },
+  { name: "Team", href: "#team" },
 ];
 
 export const SCHEDULE = [
   {
     date: "NOV 9",
     events: [
-      { time: "11:00 AM", title: "IBM SPEAKER", description: "Session 1: Talk + Workshop (Quantum Computing Introduction + Qiskit 101)" },
-      { time: "02:00 PM", title: "BREAK", description: "Light Lunch + Networking (30-minute light lunch + networking break)" },
-      { time: "02:30 PM", title: "DR. PRITHWINEEL PAUL", description: "Session 2: QML Introduction Talk + Workshop (On-site session covering QML fundamentals)" },
+      { time: "11:00 AM - 2:00 PM", title: "IBM SPEAKER", description: "Session 1: Talk + Workshop (Quantum Computing Introduction + Qiskit 101)" },
+      { time: "2:00 PM - 2:30 PM", title: "BREAK", description: "Light Lunch + Networking (30-minute light lunch + networking break)" },
+      { time: "2:30 PM - 3:30 PM", title: "DR. PRITHWINEEL PAUL", description: "Session 2: QML Introduction Talk + Workshop (On-site session covering QML fundamentals)" },
     ],
   },
   {
     date: "NOV 10",
     events: [
-      { time: "07:00 PM", title: "DR. SUBRATA CHAKRABORTY", description: "Session 1: Talk (Chips Hardware deep dive)" },
-      { time: "09:00 PM", title: "BREAK", description: "Networking Session (30-minute networking break)" },
-      { time: "09:30 PM", title: "OUR SPONSOR", description: "Challenge Kickoff (Sponsor Challenge Kickoff)" },
+      { time: "7:00 PM - 9:00 PM", title: "DR. SUBRATA CHAKRABORTY", description: "Session 1: Talk (Chips Hardware deep dive)" },
+      { time: "9:00 PM - 9:30 PM", title: "BREAK", description: "Networking Session (30-minute networking break)" },
+      { time: "9:30 PM - 10:00 PM", title: "OUR SPONSOR", description: "Challenge Kickoff (Sponsor Challenge Kickoff)" },
     ],
   },
   {
     date: "NOV 11",
     events: [
-      { time: "10:00 PM", title: "OUR SPONSOR", description: "Challenge (Sponsor Challenge: Participants submit solutions/ideas; prizes awarded based on results. Challenge ends, 3 winners announced, top 5 receive recognition, and leaderboard released)" },
+      { time: "(Previous Day 10:00 PM) - 10:00 PM", title: "OUR SPONSOR", description: "Challenge (Sponsor Challenge: Participants submit solutions/ideas; prizes awarded based on results. Challenge ends, 3 winners announced, top 5 receive recognition, and leaderboard released)" },
     ],
   },
 ];

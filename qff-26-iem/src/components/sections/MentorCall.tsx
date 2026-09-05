@@ -36,7 +36,7 @@ export const MentorCall = () => {
             </p>
 
             <Button variant="ket" className="mx-auto">
-              APPLY TO MENTOR
+              |APPLY AS MENTOR⟩
             </Button>
           </GlassCard>
         </motion.div>

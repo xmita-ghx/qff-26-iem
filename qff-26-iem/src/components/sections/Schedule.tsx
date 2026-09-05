@@ -37,13 +37,16 @@ export const Schedule = () => {
             <button
               key={day.date}
               onClick={() => setActiveDay(index)}
-              className={`px-8 py-3 rounded-full font-anton text-lg tracking-wider uppercase transition-all duration-300 ${
+              className={`px-8 py-3 rounded-full font-anton text-lg tracking-wider uppercase transition-all duration-300 flex flex-col items-center justify-center ${
                 activeDay === index
                   ? "bg-accent-vibrant text-pure-white shadow-[0_0_15px_rgba(157,78,221,0.5)]"
                   : "bg-surface/50 text-pure-white/60 hover:bg-surface hover:text-pure-white"
               }`}
             >
-              DAY {index + 1} ({day.date})
+              <span>DAY {index + 1} ({day.date})</span>
+              <span className="text-[10px] mt-1 px-2 py-0.5 rounded-full bg-pure-white/20">
+                {index === 0 ? 'IN-PERSON' : 'VIRTUAL'}
+              </span>
             </button>
           ))}
         </div>
