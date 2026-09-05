@@ -2,12 +2,13 @@
 
 import React from "react";
 import { EVENT_DETAILS } from "@/lib/constants";
+import { Linkedin, Instagram } from "lucide-react";
 
 export const Footer = () => {
   return (
     <footer className="border-t border-surface/50 bg-deep-base/50 relative z-10 pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="col-span-1 lg:col-span-2">
             <h3 className="font-anton text-2xl tracking-wider mb-4">
               {EVENT_DETAILS.name}
@@ -46,6 +47,34 @@ export const Footer = () => {
               <li><a href="#" className="hover:text-pure-white transition-colors">WhatsApp Community</a></li>
             </ul>
             <p className="text-xs text-pure-white/50 mt-2 font-urbanist">(we will provide the invitation after registration)</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-[#E0AAFF] mb-4">Contact</h4>
+            <a
+              href="mailto:qiskitfallfest26iem@gmail.com"
+              className="text-white/80 hover:text-white transition-colors text-sm break-all"
+            >
+              qiskitfallfest26iem@gmail.com
+            </a>
+          </div>
+          <div>
+            <h4 className="font-bold text-[#E0AAFF] mb-4">Socials</h4>
+            <div className="flex items-center gap-3 text-white/80">
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all"
+              >
+                <Linkedin size={20}/>
+              </a>
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all"
+              >
+                <Instagram size={20}/>
+              </a>
+            </div>
           </div>
         </div>
 
