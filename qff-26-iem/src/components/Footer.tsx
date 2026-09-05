@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-surface/50 bg-deep-base/50 relative z-10 pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="col-span-1 lg:col-span-2">
             <h3 className="font-anton text-2xl tracking-wider mb-4">
               {EVENT_DETAILS.name}
@@ -29,6 +29,14 @@ export const Footer = () => {
               <li><a href="#" className="hover:text-pure-white transition-colors">Discord Server</a></li>
               <li><a href="#" className="hover:text-pure-white transition-colors">GitHub Repository</a></li>
               <li><a href="#" className="hover:text-pure-white transition-colors">Code of Conduct</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold mb-4 text-accent-lavender">Contact</h4>
+            <ul className="space-y-2 text-pure-white/70">
+              <li><a href="mailto:contact@iem.edu" className="hover:text-pure-white transition-colors">Email Us</a></li>
+              <li><a href="tel:+1234567890" className="hover:text-pure-white transition-colors">Call Us</a></li>
+              <li><a href="#support" className="hover:text-pure-white transition-colors">Support</a></li>
             </ul>
           </div>
         </div>
