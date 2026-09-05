@@ -1,168 +1,172 @@
 "use client";
 
-import React, { useRef, useMemo, useState } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { OrbitControls, Line } from "@react-three/drei";
-import * as THREE from "three";
+import React, { useEffect, useRef } from "react";
 
-// Flocking Birds Simulation
-const Boids = ({ count = 50 }) => {
-  const mesh = useRef<THREE.InstancedMesh>(null);
+export const HeroQuantumCanvas: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-  // Dummy object to compute transformations
-  const dummy = useMemo(() => new THREE.Object3D(), []);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-  // Bird geometry (simple tetrahedron/cone for silhouette)
-  const birdGeo = useMemo(() => new THREE.ConeGeometry(0.05, 0.2, 3), []);
-  const birdMat = useMemo(() => new THREE.MeshBasicMaterial({ color: "#FFFFFF", wireframe: true, transparent: true, opacity: 0.8 }), []);
+    let animationFrameId: number;
+    let width = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth / 2);
+    let height = (canvas.height = canvas.parentElement?.clientHeight || window.innerHeight);
 
-  // Initialize random positions, velocities, and phases
-  const [boidsData] = useState(() => {
-    return Array.from({ length: count }, () => ({
-      position: new THREE.Vector3(
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10
-      ),
-      velocity: new THREE.Vector3(
-        (Math.random() - 0.5) * 0.05,
-        (Math.random() - 0.5) * 0.05,
-        (Math.random() - 0.5) * 0.05
-      ),
-      phase: Math.random() * Math.PI * 2,
+    const handleResize = () => {
+      if (!canvas || !canvas.parentElement) return;
+      width = canvas.width = canvas.parentElement.clientWidth;
+      height = canvas.height = canvas.parentElement.clientHeight;
+    };
+    window.addEventListener("resize", handleResize);
+
+    // Dynamic flocking birds
+    const birds = Array.from({ length: 35 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.3) * 1.5 - 0.5,
+      vy: -Math.random() * 1.2 - 0.5,
+      size: Math.random() * 4 + 4,
+      flapSpeed: Math.random() * 0.15 + 0.08,
+      flapPhase: Math.random() * Math.PI * 2,
     }));
-  });
 
-  useFrame((state, delta) => {
-    if (!mesh.current) return;
+    let rotationAngle = 0;
 
-    boidsData.forEach((boid, i) => {
-      // Gentle orbit around center (the cryostat)
-      const centerDirection = new THREE.Vector3(0, 0, 0).sub(boid.position).normalize().multiplyScalar(0.01);
-      boid.velocity.add(centerDirection);
+    const render = () => {
+      ctx.clearRect(0, 0, width, height);
 
-      // Up/down flapping motion
-      boid.phase += delta * 5;
-      boid.velocity.y += Math.sin(boid.phase) * 0.005;
+      // 1. Rotating Dilution Refrigerator (Cryostat) Wireframe
+      rotationAngle += 0.008;
+      const centerX = width * 0.65;
+      const startY = height * 0.08;
 
-      // Limit speed
-      boid.velocity.clampLength(0.02, 0.08);
+      const tiers = [
+        { radius: 110, y: startY },
+        { radius: 95, y: startY + 80 },
+        { radius: 80, y: startY + 170 },
+        { radius: 60, y: startY + 270 },
+        { radius: 45, y: startY + 370 },
+        { radius: 28, y: startY + 460 },
+      ];
 
-      boid.position.add(boid.velocity);
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.85)";
+      ctx.lineWidth = 1;
 
-      dummy.position.copy(boid.position);
-      // Orient bird towards its velocity
-      const target = boid.position.clone().add(boid.velocity);
-      dummy.lookAt(target);
-      dummy.rotateX(Math.PI / 2); // Adjust orientation so cone points forward
-      dummy.updateMatrix();
+      // Central axis rod
+      ctx.beginPath();
+      ctx.moveTo(centerX, startY - 40);
+      ctx.lineTo(centerX, startY + 490);
+      ctx.strokeStyle = "rgba(224, 170, 255, 0.4)";
+      ctx.stroke();
 
-      mesh.current!.setMatrixAt(i, dummy.matrix);
-    });
+      // Plates and rings
+      tiers.forEach((tier, index) => {
+        ctx.save();
+        ctx.translate(centerX, tier.y);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, tier.radius, tier.radius * 0.28, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.75)";
+        ctx.stroke();
 
-    mesh.current.instanceMatrix.needsUpdate = true;
-  });
+        // Inner disc
+        ctx.beginPath();
+        ctx.ellipse(0, 0, tier.radius * 0.85, tier.radius * 0.22, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(224, 170, 255, 0.35)";
+        ctx.stroke();
+
+        // Vertical spoke struts
+        const spokes = 8;
+        for (let s = 0; s < spokes; s++) {
+          const spokeAngle = rotationAngle + (s / spokes) * Math.PI * 2;
+          const px = Math.cos(spokeAngle) * tier.radius;
+          const py = Math.sin(spokeAngle) * (tier.radius * 0.28);
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.lineTo(px, py);
+          ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        // Connecting coaxial lines to next stage
+        if (index < tiers.length - 1) {
+          const nextTier = tiers[index + 1];
+          const lines = 6;
+          for (let l = 0; l < lines; l++) {
+            const lAngle = rotationAngle + (l / lines) * Math.PI * 2;
+            const x1 = centerX + Math.cos(lAngle) * (tier.radius * 0.7);
+            const y1 = tier.y + Math.sin(lAngle) * (tier.radius * 0.18);
+            const x2 = centerX + Math.cos(lAngle) * (nextTier.radius * 0.7);
+            const y2 = nextTier.y + Math.sin(lAngle) * (nextTier.radius * 0.18);
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            const cx = (x1 + x2) / 2 + Math.sin(rotationAngle * 2 + l) * 12;
+            ctx.quadraticCurveTo(cx, (y1 + y2) / 2, x2, y2);
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.45)";
+            ctx.stroke();
+          }
+        }
+      });
+
+      // Bottom mixing chamber cylinder
+      const bottom = tiers[tiers.length - 1];
+      ctx.save();
+      ctx.translate(centerX, bottom.y + 25);
+      ctx.beginPath();
+      ctx.rect(-15, 0, 30, 45);
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.6)";
+      ctx.stroke();
+      ctx.restore();
+
+      // 2. White Flocking Silhouette Birds
+      birds.forEach((b) => {
+        b.x += b.vx;
+        b.y += b.vy;
+        b.flapPhase += b.flapSpeed;
+
+        if (b.y < -20) {
+          b.y = height + 20;
+          b.x = Math.random() * width;
+        }
+        if (b.x < -20) b.x = width + 20;
+        if (b.x > width + 20) b.x = -20;
+
+        const flap = Math.sin(b.flapPhase) * 0.5;
+
+        ctx.save();
+        ctx.translate(b.x, b.y);
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.85)";
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        // V-wing bird silhouette
+        ctx.moveTo(-b.size, flap * b.size);
+        ctx.lineTo(0, -flap * (b.size * 0.3));
+        ctx.lineTo(b.size, flap * b.size);
+        ctx.stroke();
+        ctx.restore();
+      });
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   return (
-    <instancedMesh ref={mesh} args={[birdGeo, birdMat, count]}>
-      <coneGeometry args={[0.05, 0.2, 3]} />
-      <meshBasicMaterial color="#FFFFFF" wireframe transparent opacity={0.6} />
-    </instancedMesh>
+    <canvas
+      ref={canvasRef}
+      className="w-full h-full block pointer-events-none"
+    />
   );
 };
 
-// A simplified procedural dilution refrigerator (cryostat) wireframe
-const Cryostat = () => {
-  const groupRef = useRef<THREE.Group>(null);
-
-  useFrame((state, delta) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += delta * 0.2; // Continuous smooth rotation
-    }
-  });
-
-  // Generate plates
-  const [plates] = useState(() => {
-    return [
-      { radius: 2, y: 3 },
-      { radius: 1.8, y: 1.5 },
-      { radius: 1.5, y: 0 },
-      { radius: 1.2, y: -1.5 },
-      { radius: 0.8, y: -3 },
-    ];
-  });
-
-  return (
-    <group ref={groupRef}>
-      {/* Central Support Rod */}
-      <mesh position={[0, 0, 0]}>
-        <cylinderGeometry args={[0.1, 0.1, 8, 8]} />
-        <meshBasicMaterial color="#E0AAFF" wireframe />
-      </mesh>
-
-      {/* Plates */}
-      {plates.map((plate, index) => (
-        <group key={index} position={[0, plate.y, 0]}>
-          <mesh>
-            <cylinderGeometry args={[plate.radius, plate.radius, 0.1, 16]} />
-            <meshBasicMaterial color="#FFFFFF" wireframe transparent opacity={0.6} />
-          </mesh>
-          <mesh>
-            <cylinderGeometry args={[plate.radius - 0.1, plate.radius - 0.1, 0.12, 16]} />
-            <meshBasicMaterial color="#9D4EDD" wireframe transparent opacity={0.4} />
-          </mesh>
-        </group>
-      ))}
-
-      {/* Coaxial Lines / Wires (Procedural vertical lines) */}
-      {Array.from({ length: 6 }).map((_, i) => {
-        const angle = (i / 6) * Math.PI * 2;
-        const x = Math.cos(angle) * 0.6;
-        const z = Math.sin(angle) * 0.6;
-        return (
-          <Line
-            key={i}
-            points={[
-              new THREE.Vector3(x, 3, z),
-              new THREE.Vector3(x, 1.5, z),
-              new THREE.Vector3(x * 0.8, 0, z * 0.8),
-              new THREE.Vector3(x * 0.6, -1.5, z * 0.6),
-              new THREE.Vector3(x * 0.4, -3, z * 0.4),
-            ]}
-            color="#E0AAFF"
-            lineWidth={1}
-            transparent
-            opacity={0.5}
-          />
-        );
-      })}
-    </group>
-  );
-};
-
-export const HeroQuantumCanvas = () => {
-  return (
-    <div className="absolute inset-0 z-0 pointer-events-auto overflow-hidden">
-      <Canvas
-        camera={{ position: [0, 0, 10], fov: 45 }}
-        gl={{ antialias: true, alpha: true }}
-        dpr={[1, 2]}
-      >
-        <ambientLight intensity={0.5} />
-        <Cryostat />
-        <Boids count={60} />
-
-        {/* Allows subtle user interaction for rotation/tilt */}
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          autoRotate={false}
-          maxPolarAngle={Math.PI / 2 + 0.2}
-          minPolarAngle={Math.PI / 2 - 0.2}
-          maxAzimuthAngle={0.2}
-          minAzimuthAngle={-0.2}
-        />
-      </Canvas>
-    </div>
-  );
-};
+export default HeroQuantumCanvas;
