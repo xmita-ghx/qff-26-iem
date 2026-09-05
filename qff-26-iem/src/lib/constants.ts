@@ -23,19 +23,24 @@ export const ROUTES = [
 
 export const SCHEDULE = [
   {
-    date: "November 9, 2026",
+    date: "NOV 9",
     events: [
-      { time: "09:00 AM", title: "Opening Ceremony" },
-      { time: "10:30 AM", title: "Keynote: The Century of Quantum" },
-      { time: "01:00 PM", title: "Workshop: Qiskit 1.0 Fundamentals" },
+      { time: "10:00 AM", title: "IBM KEYNOTE" },
+      { time: "11:30 AM", title: "QISKIT 101" },
     ],
   },
   {
-    date: "November 10, 2026",
+    date: "NOV 10",
     events: [
-      { time: "09:30 AM", title: "Quantum Algorithms Hackathon" },
-      { time: "02:00 PM", title: "Hardware Demonstrations" },
-      { time: "05:00 PM", title: "Closing Remarks & Awards" },
+      { time: "10:00 AM", title: "DR. PRITHWINEEL PAUL QML" },
+      { time: "02:00 PM", title: "DR. SUBRATA CHAKRABORTY HARDWARE" },
+    ],
+  },
+  {
+    date: "NOV 11",
+    events: [
+      { time: "10:00 AM", title: "SPONSOR CHALLENGE KICKOFF" },
+      { time: "11:00 AM", title: "24-HR HACKATHON" },
     ],
   },
 ];

@@ -10,11 +10,19 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: #FFFFFF;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(157, 78, 221, 0.12) 0px,
+      rgba(157, 78, 221, 0.28) 24px,
+      rgba(60, 9, 108, 0.92) 48px,
+      rgba(36, 0, 70, 1) 72px
+    ),
+    linear-gradient(180deg, #3c096c 0%, #240046 50%, #10002b 100%);
   font-family: var(--font-urbanist), sans-serif;
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 @layer utilities {
