@@ -21,11 +21,7 @@ export const Footer = () => {
                 src="/logos/qff-logo.png"
                 alt="QFF Circular Logo"
                 className="object-cover w-full h-full"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
               />
-              <span className="absolute inset-0 flex items-center justify-center font-anton text-xs text-pure-white/50">QFF</span>
             </div>
           </div>
           <div>
