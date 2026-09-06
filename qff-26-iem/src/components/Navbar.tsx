@@ -27,19 +27,9 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 group">
-          <div className="flex items-center gap-3">
-            <div className="relative w-9 h-9 md:w-10 md:h-10 rounded-lg overflow-hidden border border-white/15 bg-white/5 flex items-center justify-center flex-shrink-0">
-              <img
-                src="/logos/navbar-logo.png"
-                alt="QFF Logo"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-              />
-            </div>
-            <span className="font-anton text-xl tracking-wider text-white">QFF 2026</span>
-          </div>
+          <span className="font-anton text-2xl tracking-widest text-pure-white group-hover:text-accent-lavender transition-colors">
+            QFF 2026
+          </span>
         </a>
 
         {/* Desktop Nav */}
@@ -56,7 +46,7 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button variant="ket">REGISTER</Button>
+          <Button variant="ket">Register</Button>
         </div>
 
         {/* Mobile Toggle */}
@@ -81,8 +71,8 @@ export const Navbar = () => {
               {route.name}
             </a>
           ))}
-          <Button variant="ket" className="w-full mt-4 justify-center">
-            REGISTER
+          <Button variant="ket" className="w-full mt-4">
+            Register Now
           </Button>
         </div>
       )}

@@ -16,22 +16,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         "rounded-full bg-accent-vibrant text-pure-white hover:bg-accent-glow hover:shadow-[0_0_20px_rgba(157,78,221,0.6)] px-6 py-2.5",
       secondary:
         "rounded-full border border-accent-glow/50 bg-transparent text-pure-white hover:bg-accent-glow/20 px-6 py-2.5",
-      ket: "group flex items-center rounded-none border-y border-accent-lavender/40 px-6 py-2 bg-surface/20 hover:bg-accent-vibrant/40 hover:border-accent-lavender",
+      ket: "font-anton text-lg tracking-wide rounded-none border-y border-accent-lavender/40 px-6 py-2 text-pure-white bg-surface/20 hover:bg-accent-vibrant/40 hover:border-accent-lavender before:content-['⟨'] before:mr-2 before:text-accent-lavender after:content-['|⟩'] after:ml-2 after:text-accent-lavender",
     };
-
-    if (variant === "ket") {
-      return (
-        <button
-          ref={ref}
-          className={cn(baseStyles, variants[variant], className)}
-          {...props}
-        >
-          <span className="font-montserrat font-light text-accent-lavender mr-2 text-xl">|</span>
-          <span className="font-anton tracking-wider uppercase text-white">{children}</span>
-          <span className="font-montserrat font-light text-accent-lavender ml-2 text-xl">⟩</span>
-        </button>
-      );
-    }
 
     return (
       <button
