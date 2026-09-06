@@ -26,21 +26,12 @@ export const Partners = () => {
               className="flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
             >
               <div className="relative w-32 h-16 md:w-40 md:h-20 flex items-center justify-center">
-                {/* Fallback text if logo image is missing/placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center font-anton text-xl tracking-wider text-pure-white/80">
-                  {partner.name}
-                </div>
-                {/*
-                  When actual SVGs are present, this will overlay.
-                  Currently hiding the broken image icon using styling if it fails,
-                  but the text behind it will show.
-                */}
                 <img
                   src={partner.logo}
                   alt={partner.name}
                   className="relative z-10 max-w-full max-h-full object-contain filter drop-shadow-md bg-transparent"
                   onError={(e) => {
-                    // Hide the broken image to show the fallback text behind
+                    // Hide the broken image icon if it fails
                     e.currentTarget.style.display = 'none';
                   }}
                 />
