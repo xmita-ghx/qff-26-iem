@@ -48,15 +48,15 @@ const Particles = ({ count = 150 }) => {
 
   return (
     <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
-      <sphereGeometry args={[0.04, 16, 16]} />
-      <meshBasicMaterial color="#E9D5FF" transparent opacity={0.6} />
+      <sphereGeometry args={[0.03, 8, 8]} />
+      <meshBasicMaterial color="#9D4EDD" transparent opacity={0.4} />
     </instancedMesh>
   );
 };
 
 export const QuantumField = () => {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none opacity-100 mix-blend-screen" style={{ filter: "drop-shadow(0 0 12px rgba(233, 213, 255, 0.4))" }}>
+    <div className="fixed inset-0 z-0 pointer-events-none opacity-50">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 60 }}
         gl={{ antialias: false, alpha: true }}

@@ -15,20 +15,6 @@ export const Schedule = () => {
           <h2 className="font-anton text-4xl md:text-5xl uppercase tracking-wider mb-4">
             Event <span className="text-accent-lavender">Schedule</span>
           </h2>
-          <div className="mt-8 flex gap-6 justify-center">
-            <div className="flex flex-col">
-              <span className="font-anton text-4xl text-accent-glow">3</span>
-              <span className="text-sm text-pure-white/60 uppercase tracking-widest mt-1">Days</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-anton text-4xl text-accent-glow">4+</span>
-              <span className="text-sm text-pure-white/60 uppercase tracking-widest mt-1">Tracks</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-anton text-4xl text-accent-glow">100+</span>
-              <span className="text-sm text-pure-white/60 uppercase tracking-widest mt-1">Attendees</span>
-            </div>
-          </div>
         </div>
 
         {/* Day Tabs */}
@@ -37,26 +23,19 @@ export const Schedule = () => {
             <button
               key={day.date}
               onClick={() => setActiveDay(index)}
-              className={`px-8 py-3 rounded-full font-anton text-lg tracking-wider uppercase transition-all duration-300 flex flex-col items-center justify-center ${
+              className={`px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
                 activeDay === index
                   ? "bg-accent-vibrant text-pure-white shadow-[0_0_15px_rgba(157,78,221,0.5)]"
                   : "bg-surface/50 text-pure-white/60 hover:bg-surface hover:text-pure-white"
               }`}
             >
-              <span>DAY {index + 1} ({day.date})</span>
-              <span className="text-[10px] mt-1 px-2 py-0.5 rounded-full bg-pure-white/20">
-                {index === 0 ? 'IN-PERSON' : 'VIRTUAL'}
-              </span>
+              Day {index + 1} — {day.date}
             </button>
           ))}
         </div>
 
         {/* Schedule List */}
-        <GlassCard className="p-8 relative max-h-[600px] overflow-y-auto custom-scrollbar">
-          {/* Vertical Timeline Track */}
-          <div className="absolute left-10 md:left-40 top-8 bottom-8 w-1 bg-gradient-to-b from-[#9D4EDD] via-[#E0AAFF] to-[#3C096C] rounded-full hidden sm:block">
-          </div>
-
+        <GlassCard className="p-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeDay}
@@ -64,23 +43,20 @@ export const Schedule = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="space-y-8 relative z-10 sm:pl-12 md:pl-48"
+              className="space-y-6"
             >
               {SCHEDULE[activeDay].events.map((event, index) => (
                 <div
                   key={index}
-                  className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 rounded-xl hover:bg-surface/50 transition-colors"
+                  className="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-xl hover:bg-surface/50 transition-colors border-l-2 border-transparent hover:border-accent-glow"
                 >
-                  <div className="sm:absolute sm:left-0 sm:w-32 flex-shrink-0 text-left sm:text-right sm:pr-8">
-                    <span className="text-accent-lavender font-anton text-xl tracking-wide uppercase">
+                  <div className="md:w-32 flex-shrink-0">
+                    <span className="text-accent-lavender font-anton text-lg tracking-wide">
                       {event.time}
                     </span>
                   </div>
                   <div>
-                    <h4 className="text-xl md:text-2xl font-anton uppercase text-white tracking-wide">{event.title}</h4>
-                    {event.description && (
-                      <p className="text-sm text-pure-white/70 mt-2 font-urbanist">{event.description}</p>
-                    )}
+                    <h4 className="text-lg font-semibold">{event.title}</h4>
                   </div>
                 </div>
               ))}
