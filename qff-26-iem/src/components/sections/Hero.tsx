@@ -41,6 +41,10 @@ export const Hero = () => {
           <div className="font-anton uppercase text-accent-lavender tracking-widest text-sm md:text-base mt-8">
             NOVEMBER 9, 10, AND 11, 2026 | IEM KOLKATA
           </div>
+          <p className="font-urbanist text-accent-lavender text-sm sm:text-base md:text-lg mt-2 leading-relaxed">
+            Come join us this fall! <br className="hidden sm:inline" />
+            At Institute of Engineering and Management, Kolkata or virtually.
+          </p>
         </motion.div>
       </div>
 

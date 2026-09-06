@@ -26,7 +26,7 @@ export const SCHEDULE = [
     date: "NOV 9",
     events: [
       { time: "11:00 AM - 2:00 PM", title: "IBM SPEAKER", description: "Session 1: Talk + Workshop (Quantum Computing Introduction + Qiskit 101)" },
-      { time: "2:00 PM - 2:30 PM", title: "BREAK", description: "Light Lunch + Networking (30-minute light lunch + networking break)" },
+      { time: "2:00 PM - 2:30 PM", title: "CHI(R)PS—NETWORKING BREAK", description: "Light Lunch + Networking (30-minute light lunch + networking break)" },
       { time: "2:30 PM - 3:30 PM", title: "DR. PRITHWINEEL PAUL", description: "Session 2: QML Introduction Talk + Workshop (On-site session covering QML fundamentals)" },
     ],
   },
@@ -34,14 +34,14 @@ export const SCHEDULE = [
     date: "NOV 10",
     events: [
       { time: "7:00 PM - 9:00 PM", title: "DR. SUBRATA CHAKRABORTY", description: "Session 1: Talk (Chips Hardware deep dive)" },
-      { time: "9:00 PM - 9:30 PM", title: "BREAK", description: "Networking Session (30-minute networking break)" },
-      { time: "9:30 PM - 10:00 PM", title: "OUR SPONSOR", description: "Challenge Kickoff (Sponsor Challenge Kickoff)" },
+      { time: "9:00 PM - 9:30 PM", title: "CHI(R)PS—NETWORKING BREAK", description: "Networking Session (30-minute networking break)" },
+      { time: "9:30 PM - 10:00 PM", title: "SPONSOR CHALLENGE", description: "Challenge Kickoff (Sponsor Challenge Kickoff)" },
     ],
   },
   {
     date: "NOV 11",
     events: [
-      { time: "(Previous Day 10:00 PM) - 10:00 PM", title: "OUR SPONSOR", description: "Challenge (Sponsor Challenge: Participants submit solutions/ideas; prizes awarded based on results. Challenge ends, 3 winners announced, top 5 receive recognition, and leaderboard released)" },
+      { time: "(Previous Day 10:00 PM) - 10:00 PM", title: "SPONSOR CHALLENGE", description: "Challenge (Sponsor Challenge: Participants submit solutions/ideas; prizes awarded based on results. Challenge ends, 3 winners announced, top 5 receive recognition, and leaderboard released)" },
     ],
   },
 ];
@@ -52,7 +52,7 @@ export const TRACKS = [
     description: "Hands-on sessions exploring quantum concepts and tools.",
   },
   {
-    title: "Algorithms",
+    title: "Quantum Machine Learning",
     description: "Deep dives into quantum algorithms and their applications.",
   },
   {
