@@ -24,6 +24,10 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Qiskit Fall Fest 2026 at IEM",
   description: "Century of Quantum - Join us for Qiskit Fall Fest 2026 at IEM.",
+  icons: {
+    icon: "/logos/navbar-logo.png",
+    apple: "/logos/navbar-logo.png",
+  },
 };
 
 export default function RootLayout({
