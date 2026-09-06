@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
 
 export const Team = () => {
   return (
@@ -17,8 +18,92 @@ export const Team = () => {
             TEAM
           </h2>
 
-          <div className="min-h-[200px]">
-            {/* Future team member cards will go here */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 min-h-[200px] text-left">
+            {/* Card 1 */}
+            <div className="flex flex-col">
+              <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
+                <img
+                  src="/team/asmita-ghorai.png"
+                  alt="Asmita Ghorai"
+                  className="object-cover w-full h-full"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+              </div>
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Asmita Ghorai</h3>
+                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Lead Organizer, Technical Head</p>
+                </div>
+                <a href="#" aria-label="LinkedIn" className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0">
+                  <Linkedin size={16} />
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="flex flex-col">
+              <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
+                <img
+                  src="/team/arna-roy.png"
+                  alt="Arna Roy"
+                  className="object-cover w-full h-full"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+              </div>
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Arna Roy</h3>
+                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Co-organizer, Operations Lead</p>
+                </div>
+                <a href="#" aria-label="LinkedIn" className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0">
+                  <Linkedin size={16} />
+                </a>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex flex-col">
+              <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
+                <img
+                  src="/team/moutushi-singh.png"
+                  alt="Dr. Moutushi Singh"
+                  className="object-cover w-full h-full"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+              </div>
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <span className="block font-anton text-xs text-[#E0AAFF] tracking-wider uppercase mb-1">FACULTY ADVISORS</span>
+                  <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Dr. Moutushi Singh</h3>
+                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Convenor</p>
+                </div>
+                <a href="#" aria-label="LinkedIn" className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0">
+                  <Linkedin size={16} />
+                </a>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="flex flex-col">
+              <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
+                <img
+                  src="/team/prithwineel-paul.png"
+                  alt="Dr. Prithwineel Paul"
+                  className="object-cover w-full h-full"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+              </div>
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <span className="block font-anton text-xs text-[#E0AAFF] tracking-wider uppercase mb-1">FACULTY ADVISORS</span>
+                  <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Dr. Prithwineel Paul</h3>
+                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Convenor</p>
+                </div>
+                <a href="#" aria-label="LinkedIn" className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0">
+                  <Linkedin size={16} />
+                </a>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
