@@ -17,13 +17,13 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-start"
         >
-          {/* IBM Quantum & QuantCom Top Logos (Enlarged) */}
-          <div className="flex items-center gap-8 md:gap-10 mb-8">
+          {/* IBM Quantum & QuantCom Top Logos (Shifted left to align IBM wording with 'Q') */}
+          <div className="flex items-center gap-7 md:gap-9 mb-7 -ml-1.5 md:-ml-2.5">
             <div className="h-16 md:h-24 flex items-center">
               <img
                 src="/logos/ibm-quantum.png"
                 alt="IBM Quantum"
-                className="h-full w-auto object-contain brightness-0 invert opacity-95"
+                className="h-full w-auto object-contain object-left brightness-0 invert opacity-95"
               />
             </div>
             <div className="h-14 md:h-20 flex items-center">
@@ -35,15 +35,15 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Tightened Typographic Line Hierarchy matching natural wrap line-height */}
+          {/* Loosened Vertical Line Spacing */}
           <div className="flex flex-col items-start leading-none">
             <h1 className="font-anton text-6xl md:text-8xl lg:text-9xl text-white tracking-tight uppercase leading-none m-0 p-0">
               QISKIT FALL FEST
             </h1>
-            <h2 className="font-anton text-4xl md:text-6xl text-white uppercase leading-none -mt-1.5 md:-mt-2.5">
+            <h2 className="font-anton text-4xl md:text-6xl text-white uppercase leading-none mt-1 md:mt-1.5">
               2026
             </h2>
-            <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] uppercase leading-none -mt-1 md:-mt-1.5">
+            <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] uppercase leading-none mt-1 md:mt-1.5">
               AT IEM
             </h3>
           </div>
