@@ -17,16 +17,16 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-start"
         >
-          {/* IBM Quantum & QuantCom Top Logos (PNG from /logos) */}
-          <div className="flex items-center gap-6 mb-6">
-            <div className="h-9 md:h-12 flex items-center">
+          {/* IBM Quantum & QuantCom Top Logos (Enlarged) */}
+          <div className="flex items-center gap-8 md:gap-10 mb-8">
+            <div className="h-16 md:h-24 flex items-center">
               <img
                 src="/logos/ibm-quantum.png"
                 alt="IBM Quantum"
                 className="h-full w-auto object-contain brightness-0 invert opacity-95"
               />
             </div>
-            <div className="h-8 md:h-10 flex items-center">
+            <div className="h-14 md:h-20 flex items-center">
               <img
                 src="/logos/quantcom.png"
                 alt="QuantCom"
@@ -35,15 +35,15 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Loosened Vertical Hierarchy */}
-          <div className="flex flex-col items-start leading-tight">
-            <h1 className="font-anton text-6xl md:text-8xl lg:text-9xl text-white tracking-tight uppercase m-0 p-0">
+          {/* Tightened Typographic Line Hierarchy matching natural wrap line-height */}
+          <div className="flex flex-col items-start leading-none">
+            <h1 className="font-anton text-6xl md:text-8xl lg:text-9xl text-white tracking-tight uppercase leading-none m-0 p-0">
               QISKIT FALL FEST
             </h1>
-            <h2 className="font-anton text-4xl md:text-6xl text-white uppercase mt-1 md:mt-2">
+            <h2 className="font-anton text-4xl md:text-6xl text-white uppercase leading-none -mt-1.5 md:-mt-2.5">
               2026
             </h2>
-            <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] uppercase mt-1 md:mt-2">
+            <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] uppercase leading-none -mt-1 md:-mt-1.5">
               AT IEM
             </h3>
           </div>
