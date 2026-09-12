@@ -34,7 +34,13 @@ export const Team = () => {
                   <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Asmita Ghorai</h3>
                   <p className="font-urbanist text-white/80 text-xs sm:text-sm">Lead Organizer, Technical Head</p>
                 </div>
-                <a href="#" aria-label="LinkedIn" className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0">
+                <a
+                  href="https://www.linkedin.com/in/asmita-ghorai-a613563a5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0"
+                >
                   <Linkedin size={16} />
                 </a>
               </div>
@@ -55,7 +61,13 @@ export const Team = () => {
                   <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Arna Roy</h3>
                   <p className="font-urbanist text-white/80 text-xs sm:text-sm">Co-organizer, Operations Lead</p>
                 </div>
-                <a href="#" aria-label="LinkedIn" className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0">
+                <a
+                  href="https://www.linkedin.com/in/arna-roy-0a839a366"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0"
+                >
                   <Linkedin size={16} />
                 </a>
               </div>
@@ -73,11 +85,17 @@ export const Team = () => {
               </div>
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <span className="block font-anton text-xs text-[#E0AAFF] tracking-wider uppercase mb-1">FACULTY ADVISORS</span>
+                  <span className="block font-anton text-xs text-[#E0AAFF] tracking-wider uppercase mb-1">FACULTY ADVISOR</span>
                   <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Dr. Moutushi Singh</h3>
                   <p className="font-urbanist text-white/80 text-xs sm:text-sm">Convenor</p>
                 </div>
-                <a href="#" aria-label="LinkedIn" className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0">
+                <a
+                  href="https://www.linkedin.com/in/dr-moutushi-singh-bb295b6a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0"
+                >
                   <Linkedin size={16} />
                 </a>
               </div>
@@ -95,11 +113,17 @@ export const Team = () => {
               </div>
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <span className="block font-anton text-xs text-[#E0AAFF] tracking-wider uppercase mb-1">FACULTY ADVISORS</span>
+                  <span className="block font-anton text-xs text-[#E0AAFF] tracking-wider uppercase mb-1">FACULTY ADVISOR</span>
                   <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Dr. Prithwineel Paul</h3>
                   <p className="font-urbanist text-white/80 text-xs sm:text-sm">Convenor</p>
                 </div>
-                <a href="#" aria-label="LinkedIn" className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0">
+                <a
+                  href="https://www.linkedin.com/in/prithwineel-paul-768aa212"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0"
+                >
                   <Linkedin size={16} />
                 </a>
               </div>

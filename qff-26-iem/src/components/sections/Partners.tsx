@@ -16,9 +16,14 @@ export const Partners = () => {
 
         <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20">
           {PARTNERS.map((partner, index) => {
-            const isLarge =
-              partner.logo.includes("quantcom") ||
-              partner.logo.includes("ibm-quantum");
+            const isIBM = partner.logo.includes("ibm-quantum");
+            const isQuantCom = partner.logo.includes("quantcom");
+
+            const sizeClass = isIBM
+              ? "w-64 h-28 md:w-80 md:h-36"
+              : isQuantCom
+              ? "w-56 h-24 md:w-64 md:h-28"
+              : "w-44 h-20 md:w-52 md:h-24";
 
             return (
               <motion.div
@@ -30,11 +35,7 @@ export const Partners = () => {
                 className="flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
                 <div
-                  className={`relative flex items-center justify-center transition-all ${
-                    isLarge
-                      ? "w-44 h-24 md:w-56 md:h-28"
-                      : "w-32 h-16 md:w-40 md:h-20"
-                  }`}
+                  className={`relative flex items-center justify-center transition-all ${sizeClass}`}
                 >
                   <img
                     src={partner.logo}

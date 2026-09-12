@@ -17,15 +17,36 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-start"
         >
-          <h1 className="font-anton text-6xl md:text-8xl lg:text-9xl text-white tracking-tight leading-none uppercase">
-            QISKIT FALL FEST
-          </h1>
-          <h2 className="font-anton text-4xl md:text-6xl text-white mt-3 uppercase">
-            2026
-          </h2>
-          <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] mt-2 uppercase">
-            AT IEM
-          </h3>
+          {/* IBM Quantum & QuantCom Top Badges */}
+          <div className="flex items-center gap-6 mb-4">
+            <div className="h-9 md:h-12 flex items-center">
+              <img
+                src="/logos/ibm-quantum.svg"
+                alt="IBM Quantum"
+                className="h-full w-auto object-contain brightness-0 invert opacity-95"
+              />
+            </div>
+            <div className="h-8 md:h-10 flex items-center">
+              <img
+                src="/logos/quantcom.svg"
+                alt="QuantCom"
+                className="h-full w-auto object-contain brightness-0 invert opacity-95"
+              />
+            </div>
+          </div>
+
+          {/* Tightened Header Hierarchy */}
+          <div className="flex flex-col items-start leading-none">
+            <h1 className="font-anton text-6xl md:text-8xl lg:text-9xl text-white tracking-tight leading-none uppercase m-0 p-0">
+              QISKIT FALL FEST
+            </h1>
+            <h2 className="font-anton text-4xl md:text-6xl text-white leading-none uppercase -mt-1 md:-mt-3">
+              2026
+            </h2>
+            <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] leading-none uppercase -mt-0.5 md:-mt-1.5">
+              AT IEM
+            </h3>
+          </div>
 
           <p className="font-urbanist text-left max-w-lg text-white/85 text-lg mt-6 leading-relaxed">
             <strong className="block mb-2 text-accent-lavender text-xl font-medium">Chi(r)ps: A Decade of Harmony on the Cloud.</strong>

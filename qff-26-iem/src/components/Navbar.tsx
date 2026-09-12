@@ -17,6 +17,26 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Ensure Challenges appears right after Schedule / View Schedule
+  const navItems = React.useMemo(() => {
+    const items = [...ROUTES];
+    const scheduleIndex = items.findIndex(
+      (r) =>
+        r.name.toLowerCase().includes("schedule") ||
+        r.href.includes("schedule")
+    );
+    const challengeItem = { name: "Challenges", href: "#challenge" };
+
+    if (!items.some((r) => r.href === "#challenge")) {
+      if (scheduleIndex !== -1) {
+        items.splice(scheduleIndex + 1, 0, challengeItem);
+      } else {
+        items.push(challengeItem);
+      }
+    }
+    return items;
+  }, []);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -45,7 +65,7 @@ export const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-6">
-            {ROUTES.map((route) => (
+            {navItems.map((route) => (
               <li key={route.name}>
                 <a
                   href={route.href}
@@ -71,7 +91,7 @@ export const Navbar = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-deep-base/95 backdrop-blur-xl border-b border-surface p-6 md:hidden flex flex-col gap-4">
-          {ROUTES.map((route) => (
+          {navItems.map((route) => (
             <a
               key={route.name}
               href={route.href}

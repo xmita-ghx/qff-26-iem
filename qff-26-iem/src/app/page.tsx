@@ -5,6 +5,7 @@ import { About } from "@/components/sections/About";
 import { MentorCall } from "@/components/sections/MentorCall";
 import { Tracks } from "@/components/sections/Tracks";
 import { Schedule } from "@/components/sections/Schedule";
+import { Challenge } from "@/components/sections/Challenge";
 import { Partners } from "@/components/sections/Partners";
 import { Team } from "@/components/sections/Team";
 import { Registrations } from "@/components/sections/Registrations";
@@ -24,6 +25,7 @@ export default function Home() {
       <About />
       <Tracks />
       <Schedule />
+      <Challenge />
       <MentorCall />
       <Team />
       <Registrations />

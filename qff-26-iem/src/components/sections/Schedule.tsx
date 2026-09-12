@@ -32,7 +32,7 @@ export const Schedule = () => {
         </div>
 
         {/* Day Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
+        <div className="flex flex-wrap justify-center gap-4 mb-6">
           {SCHEDULE.map((day, index) => (
             <button
               key={day.date}
@@ -49,6 +49,13 @@ export const Schedule = () => {
               </span>
             </button>
           ))}
+        </div>
+
+        {/* Timezone Indicator */}
+        <div className="text-center sm:text-right pr-2 mb-3">
+          <span className="font-urbanist text-sm text-[#E0AAFF]/80 tracking-wide">
+            All times are in IST.
+          </span>
         </div>
 
         {/* Schedule List */}
