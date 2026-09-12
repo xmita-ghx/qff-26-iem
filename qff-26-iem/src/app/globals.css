@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: #230b5e;
+    --background: #1e0952;
     --foreground: #FFFFFF;
   }
 }
@@ -18,7 +18,7 @@ body {
       rgba(60, 9, 108, 0.92) 48px,
       rgba(36, 0, 70, 1) 72px
     ),
-    linear-gradient(180deg, #3c096c 0%, #240046 50%, #230b5e 100%);
+    linear-gradient(180deg, #3c096c 0%, #240046 50%, #1e0952 100%);
   color: #ffffff;
   font-family: var(--font-urbanist), sans-serif;
   overflow-x: hidden;
@@ -45,7 +45,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #230b5e;
+  background: #1e0952;
 }
 
 ::-webkit-scrollbar-thumb {
