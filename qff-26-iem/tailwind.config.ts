@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         deep: {
-          base: "#0D031A", // rich obsidian violet
+          base: "#230b5e", // updated base background
           section: "#16052F",
         },
         surface: {
