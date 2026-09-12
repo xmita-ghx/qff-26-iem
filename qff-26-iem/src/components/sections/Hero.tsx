@@ -17,33 +17,33 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-start"
         >
-          {/* IBM Quantum & QuantCom Top Badges */}
-          <div className="flex items-center gap-6 mb-4">
+          {/* IBM Quantum & QuantCom Top Logos (PNG from /logos) */}
+          <div className="flex items-center gap-6 mb-6">
             <div className="h-9 md:h-12 flex items-center">
               <img
-                src="/logos/ibm-quantum.svg"
+                src="/logos/ibm-quantum.png"
                 alt="IBM Quantum"
                 className="h-full w-auto object-contain brightness-0 invert opacity-95"
               />
             </div>
             <div className="h-8 md:h-10 flex items-center">
               <img
-                src="/logos/quantcom.svg"
+                src="/logos/quantcom.png"
                 alt="QuantCom"
                 className="h-full w-auto object-contain brightness-0 invert opacity-95"
               />
             </div>
           </div>
 
-          {/* Tightened Header Hierarchy */}
-          <div className="flex flex-col items-start leading-none">
-            <h1 className="font-anton text-6xl md:text-8xl lg:text-9xl text-white tracking-tight leading-none uppercase m-0 p-0">
+          {/* Loosened Vertical Hierarchy */}
+          <div className="flex flex-col items-start leading-tight">
+            <h1 className="font-anton text-6xl md:text-8xl lg:text-9xl text-white tracking-tight uppercase m-0 p-0">
               QISKIT FALL FEST
             </h1>
-            <h2 className="font-anton text-4xl md:text-6xl text-white leading-none uppercase -mt-1 md:-mt-3">
+            <h2 className="font-anton text-4xl md:text-6xl text-white uppercase mt-1 md:mt-2">
               2026
             </h2>
-            <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] leading-none uppercase -mt-0.5 md:-mt-1.5">
+            <h3 className="font-anton text-3xl md:text-5xl text-[#E0AAFF] uppercase mt-1 md:mt-2">
               AT IEM
             </h3>
           </div>
