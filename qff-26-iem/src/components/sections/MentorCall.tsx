@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Button } from "@/components/ui/Button";
-import { EVENT_DETAILS } from "@/lib/constants";
+import { EVENT_DETAILS, LINKS } from "@/lib/constants";
 import { Calendar } from "lucide-react";
 
 export const MentorCall = () => {
@@ -35,9 +35,16 @@ export const MentorCall = () => {
               Are you experienced in quantum computing, Qiskit, or quantum machine learning? Join us as a mentor to guide teams, review projects, and share your expertise with the next generation of quantum developers. Please note that only students of IEM Kolkata can apply to be a mentor.
             </p>
 
-            <Button variant="ket" className="mx-auto">
-              |APPLY AS MENTOR⟩
-            </Button>
+            <a
+              href={LINKS.mentorForm}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button variant="ket" className="mx-auto">
+                |APPLY AS MENTOR⟩
+              </Button>
+            </a>
           </GlassCard>
         </motion.div>
       </div>

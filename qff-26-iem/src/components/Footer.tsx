@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { EVENT_DETAILS } from "@/lib/constants";
+import { EVENT_DETAILS, LINKS } from "@/lib/constants";
 import { Linkedin, Instagram, MapPin } from "lucide-react";
 
 export const Footer = () => {
@@ -39,7 +39,16 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 text-accent-lavender">Community</h4>
             <ul className="space-y-2 text-pure-white/70">
-              <li><a href="#" className="hover:text-pure-white transition-colors">Discord Server</a></li>
+              <li>
+                <a
+                  href={LINKS.discord}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-pure-white transition-colors"
+                >
+                  Discord Server
+                </a>
+              </li>
               <li><a href="#" className="hover:text-pure-white transition-colors">Code of Conduct</a></li>
               <li><a href="#" className="hover:text-pure-white transition-colors">WhatsApp Community</a></li>
             </ul>
@@ -69,7 +78,9 @@ export const Footer = () => {
             <h4 className="font-bold text-[#E0AAFF] mb-4">Socials</h4>
             <div className="flex items-center gap-3 text-white/80">
               <a
-                href="#"
+                href={LINKS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all"
               >

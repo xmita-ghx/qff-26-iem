@@ -13,6 +13,12 @@ export const EVENT_DETAILS = {
   mentorDeadline: "October 2, 2026",
 };
 
+export const LINKS = {
+  discord: "https://discord.gg/cqcYqYFYm",
+  linkedin: "https://www.linkedin.com/company/qiskit-fall-fest-2026-iem",
+  mentorForm: "https://forms.gle/xak22KHJq5ijn1D68",
+};
+
 export const ROUTES = [
   { name: "Register Now", href: "#registrations" },
   { name: "View Schedule", href: "#schedule" },
