@@ -54,9 +54,11 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
-            <Button variant="ket" className="px-8 py-3 rounded-full">
-              REGISTER NOW
-            </Button>
+            <a href="#registrations">
+              <Button variant="ket" className="px-8 py-3 rounded-full">
+                REGISTER NOW
+              </Button>
+            </a>
           </div>
 
           <div className="font-anton uppercase text-accent-lavender tracking-widest text-sm md:text-base mt-8">

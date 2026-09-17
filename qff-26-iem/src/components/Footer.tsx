@@ -21,7 +21,11 @@ export const Footer = () => {
                 src="/logos/qff-logo.png"
                 alt="QFF Circular Logo"
                 className="object-cover w-full h-full"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
               />
+              <span className="absolute inset-0 flex items-center justify-center font-anton text-xs text-pure-white/50">QFF</span>
             </div>
           </div>
           <div>
@@ -59,7 +63,7 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-[#E0AAFF] mb-4">Location for In-Person</h4>
             <div className="flex items-start gap-2 text-white/80 text-sm leading-relaxed">
-              <MapPin className="text-[#E0AAFF] flex-shrink-0 mt-1" size={18}/>
+              <MapPin className="text-[#E0AAFF] flex-shrink-0 mt-1" size={18} />
               <span>
                 Centre of Excellence for Quantum Computing, IEM Kolkata, Godrej Genesis Building, 15th Floor, Street Number 18, Block EP & GP, Sector V, Bidhannagar, Kolkata, West Bengal 700091, India
               </span>
@@ -84,14 +88,16 @@ export const Footer = () => {
                 aria-label="LinkedIn"
                 className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all"
               >
-                <Linkedin size={20}/>
+                <Linkedin size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/qiskitfallfestiem?stkn=MWs5bm5vMXk2aDViZw"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all"
               >
-                <Instagram size={20}/>
+                <Instagram size={20} />
               </a>
             </div>
           </div>

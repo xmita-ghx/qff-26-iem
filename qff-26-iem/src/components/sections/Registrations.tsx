@@ -23,17 +23,56 @@ export const Registrations = () => {
               REGISTRATIONS
             </h2>
 
-            <div className="space-y-6 text-lg text-pure-white/80 max-w-2xl mx-auto mb-10 text-left font-urbanist">
-              <p>
+            <div className="space-y-8 text-base md:text-lg text-pure-white/80 max-w-2xl mx-auto mb-10 text-left font-urbanist">
+              <p className="font-medium text-white/90">
                 Registrations open soon. Stay tuned!
               </p>
-              <p>
-                Please note that the in-person registration is open only to attendees affiliated to IEM Kolkata. The virtual counterpart of our event is open to the public!
-              </p>
-              <p>
+
+              {/* Subsection: Who can participate? */}
+              <div className="space-y-2">
+                <h4 className="font-anton text-xl md:text-2xl text-accent-lavender tracking-wide">
+                  Who can participate?
+                </h4>
+                <ul className="space-y-1.5 text-white list-none">
+                  <li>• Open to all students and researchers, regardless of discipline or year of study.</li>
+                  <li>• Please note that the in-person (Day 1) sessions are open only to attendees affiliated with IEM Kolkata and Newtown.</li>
+                  <li>• The virtual counterpart (Day 2 and 3) of our event is open to all!</li>
+                </ul>
+              </div>
+
+              {/* Subsection: Branded Swags, Badges and Certificates? */}
+              <div className="space-y-2">
+                <h4 className="font-anton text-xl md:text-2xl text-accent-lavender tracking-wide">
+                  Branded Swags, Badges and Certificates?
+                </h4>
+                <ul className="space-y-1.5 text-white list-none">
+                  <li>• All in-person participants receive physical swags and certificates.</li>
+                  <li>• Digital badges, stickers and credentials issued via Credly and Certifier for the challenge winners.</li>
+                  <li>• Official certificates of completion issued to participants upon clearing workshop/lab criteria and participating actively.</li>
+                </ul>
+              </div>
+
+              {/* Subsection: Prerequisites? */}
+              <div className="space-y-2">
+                <h4 className="font-anton text-xl md:text-2xl text-accent-lavender tracking-wide">
+                  Prerequisites?
+                </h4>
+                <ul className="space-y-1.5 text-white list-none">
+                  <li>• Basic knowledge of Python and a personal laptop.</li>
+                  <li>• Prior background in quantum mechanics or complex physics is <strong className="font-bold">not</strong> required.</li>
+                </ul>
+              </div>
+
+              {/* Mandatory Registration Notice */}
+              <p className="pt-2 text-sm md:text-base text-pure-white/70 border-t border-white/10">
                 Registration is required. In-person attendees should confirm they can attend at IEM and consent to event photography during registration.
               </p>
             </div>
+
+            {/* Warning Banner */}
+            <p className="text-accent-lavender font-bold font-urbanist text-base md:text-lg mb-6 tracking-wide">
+              Seats are limited; early registration is highly recommended.
+            </p>
 
             <Button variant="ket" className="mx-auto">
               REGISTER NOW
