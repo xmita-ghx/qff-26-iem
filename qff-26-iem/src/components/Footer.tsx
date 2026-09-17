@@ -14,7 +14,7 @@ export const Footer = () => {
               {EVENT_DETAILS.name}
             </h3>
             <p className="text-pure-white/70 max-w-sm">
-              The Century of Quantum. Hosted at IEM in collaboration with leading academic and industry partners.
+              Unleashing Chi(r)ps and Qreativity. Hosted at IEM Kolkata in collaboration with IBM Quantum.
             </p>
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-accent-glow/50 bg-surface/60 shadow-[0_0_15px_rgba(157,78,221,0.4)] flex items-center justify-center mt-4 relative">
               <img
@@ -25,7 +25,6 @@ export const Footer = () => {
                   e.currentTarget.style.display = "none";
                 }}
               />
-              <span className="absolute inset-0 flex items-center justify-center font-anton text-xs text-pure-white/50">QFF</span>
             </div>
           </div>
           <div>
