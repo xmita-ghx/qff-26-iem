@@ -22,11 +22,39 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://qff-26-iem.vercel.app"),
   title: "Qiskit Fall Fest 2026 at IEM",
-  description: "Century of Quantum - Join us for Qiskit Fall Fest 2026 at IEM.",
+  description:
+    "Unleashing Chi(r)ps. A Decade of Harmony on the Cloud. Hosted at Institute of Engineering and Management, Kolkata in collaboration with IBM Quantum.",
   icons: {
     icon: "/logos/navbar-logo.png",
     apple: "/logos/navbar-logo.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Qiskit Fall Fest 2026 at IEM",
+    description:
+      "Unleashing Chi(r)ps. A Decade of Harmony on the Cloud. Hosted at Institute of Engineering and Management, Kolkata in collaboration with IBM Quantum.",
+    url: "https://qff-26-iem.vercel.app",
+    siteName: "Qiskit Fall Fest 2026",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Qiskit Fall Fest 2026 at IEM",
+    description:
+      "Unleashing Chi(r)ps. A Decade of Harmony on the Cloud. Hosted at Institute of Engineering and Management, Kolkata in collaboration with IBM Quantum.",
   },
 };
 
