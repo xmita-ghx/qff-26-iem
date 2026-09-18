@@ -71,7 +71,7 @@ export const Registrations = () => {
 
             {/* Warning Banner */}
             <p className="text-accent-lavender font-bold font-urbanist text-base md:text-lg mb-6 tracking-wide">
-              Seats are limited; early registration is highly recommended.
+              Seats are limited for Day 1 (In-Person). Early registration is highly recommended.
             </p>
 
             <Button variant="ket" className="mx-auto">

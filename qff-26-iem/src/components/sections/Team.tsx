@@ -59,7 +59,7 @@ export const Team = () => {
               <div className="flex items-start justify-between gap-2">
                 <div>
                   <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Arna Roy</h3>
-                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Co-organizer, Operations Lead</p>
+                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Co-Organizer, Operations Lead</p>
                 </div>
                 <a
                   href="https://www.linkedin.com/in/arna-roy-0a839a366"
