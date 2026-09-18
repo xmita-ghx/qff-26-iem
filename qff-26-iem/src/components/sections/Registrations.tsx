@@ -40,15 +40,25 @@ export const Registrations = () => {
                 </ul>
               </div>
 
-              {/* Subsection: Branded Swags, Badges and Certificates? */}
+              {/* Subsection: Swags, Badges and Certificates? */}
               <div className="space-y-2">
                 <h4 className="font-anton text-xl md:text-2xl text-accent-lavender tracking-wide">
-                  Branded Swags, Badges and Certificates?
+                  Swags, Badges and Certificates?
                 </h4>
                 <ul className="space-y-1.5 text-white list-none">
                   <li>• All in-person participants receive physical swags and certificates.</li>
                   <li>• Digital badges, stickers and credentials issued via Credly and Certifier for the challenge winners.</li>
                   <li>• Official certificates of completion issued to participants upon clearing workshop/lab criteria and participating actively.</li>
+                </ul>
+              </div>
+
+              {/* Subsection: Registration cost? */}
+              <div className="space-y-2">
+                <h4 className="font-anton text-xl md:text-2xl text-accent-lavender tracking-wide">
+                  Registration cost?
+                </h4>
+                <ul className="space-y-1.5 text-white list-none">
+                  <li>• None! Free for all.</li>
                 </ul>
               </div>
 
