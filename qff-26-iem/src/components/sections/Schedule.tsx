@@ -5,6 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SCHEDULE } from "@/lib/constants";
 import { GlassCard } from "@/components/ui/GlassCard";
 
+interface ScheduleEvent {
+  time: string;
+  title: string;
+  speaker?: string;
+  description?: string;
+  focusAreas?: string[];
+}
+
 export const Schedule = () => {
   const [activeDay, setActiveDay] = useState(0);
 
@@ -73,20 +81,47 @@ export const Schedule = () => {
               transition={{ duration: 0.3 }}
               className="space-y-8 relative z-10 sm:pl-12 md:pl-48"
             >
-              {SCHEDULE[activeDay].events.map((event, index) => (
+              {(SCHEDULE[activeDay].events as ScheduleEvent[]).map((event, index) => (
                 <div
                   key={index}
-                  className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 rounded-xl hover:bg-surface/50 transition-colors"
+                  className="flex flex-col sm:flex-row sm:items-start gap-4 p-4 rounded-xl hover:bg-surface/50 transition-colors"
                 >
-                  <div className="sm:absolute sm:left-0 sm:w-32 flex-shrink-0 text-left sm:text-right sm:pr-8">
+                  <div className="sm:absolute sm:left-0 sm:w-32 flex-shrink-0 text-left sm:text-right sm:pr-8 pt-1">
                     <span className="text-accent-lavender font-anton text-xl tracking-wide uppercase">
                       {event.time}
                     </span>
                   </div>
-                  <div>
-                    <h4 className="text-xl md:text-2xl font-anton uppercase text-white tracking-wide">{event.title}</h4>
+                  <div className="flex-1">
+                    <h4 className="text-xl md:text-2xl font-anton uppercase text-white tracking-wide">
+                      {event.title}
+                    </h4>
+
+                    {event.speaker && (
+                      <p className="text-xs font-semibold uppercase tracking-wider text-accent-lavender/90 mt-1">
+                        {event.speaker}
+                      </p>
+                    )}
+
                     {event.description && (
-                      <p className="text-sm text-pure-white/70 mt-2 font-urbanist">{event.description}</p>
+                      <p className="text-sm text-pure-white/70 mt-2 font-urbanist leading-relaxed">
+                        {event.description}
+                      </p>
+                    )}
+
+                    {event.focusAreas && event.focusAreas.length > 0 && (
+                      <div className="mt-4 pt-3 border-t border-white/10 font-urbanist">
+                        <p className="text-xs font-bold uppercase tracking-wider text-accent-lavender mb-2">
+                          Key Focus Areas
+                        </p>
+                        <ul className="space-y-2 text-xs md:text-sm text-pure-white/80 list-none pl-1">
+                          {event.focusAreas.map((point, pIdx) => (
+                            <li key={pIdx} className="flex items-start gap-2">
+                              <span className="text-accent-lavender font-bold mt-0.5">•</span>
+                              <span className="leading-relaxed">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
                   </div>
                 </div>

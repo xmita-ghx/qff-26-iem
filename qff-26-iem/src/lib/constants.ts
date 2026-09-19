@@ -9,7 +9,7 @@ export const EVENT_DETAILS = {
   name: "Qiskit Fall Fest 2026 at IEM",
   subTheme: "Century of Quantum",
   organizers: ["IEM", "IEM Centre of Excellence", "QuantCom", "UEM", "IBM Quantum"],
-  dates: "November 9–10, 2026",
+  dates: "November 9–11, 2026",
   mentorDeadline: "October 2, 2026",
 };
 
@@ -55,7 +55,13 @@ export const SCHEDULE = [
       { 
         time: "7:00 PM - 9:00 PM", 
         title: "DR. SUBRATA CHAKRABORTY", 
-        description: "Session 1: Talk (Chips Hardware deep dive)" 
+        description: "Session 1: Talk — Bridging the Physical and Logical Layers: From Mesoscopic Superconducting Qubits to the Quantum Hardware–Software Interface",
+        focusAreas: [
+          "Mesoscopic Superconductivity & Qubit Physics: Physical realization of transmon qubits in superconducting circuits, Josephson junction dynamics, and microwave control lines in IBM Quantum processors.",
+          "System–Bath Coupling & Noise Mitigation: Modeling environmental decoherence, crosstalk, and dissipation mechanisms (system-bath interactions) to design robust dynamical decoupling sequences and error mitigation strategies.",
+          "Hardware-to-Software Interfacing & Pulse-Level Control: Translating abstract gate operations into calibrated microwave pulses via Qiskit Pulse, pulse-level scheduling, and hardware-aware circuit transpilation.",
+          "Processor Topology & Coupling Architectures: Inter-qubit coupling mechanisms (e.g., tunable couplers in modern architectures like Heron), heavy-hex lattice constraints, and mapping logical circuits onto physical chip layouts."
+        ]
       },
       { 
         time: "9:00 PM - 9:30 PM", 
