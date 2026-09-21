@@ -32,7 +32,7 @@ export const MentorCall = () => {
             </h2>
 
             <p className="text-lg text-pure-white/80 max-w-2xl mx-auto mb-10">
-              Are you experienced in quantum computing, Qiskit, or quantum machine learning? Join us as a mentor to guide teams, review projects, and share your expertise with the next generation of quantum developers. Please note that only students of IEM Kolkata can apply to be a mentor.
+              Are you experienced in quantum computing, Qiskit, or quantum machine learning? Join us as a mentor to guide teams, review projects, and share your expertise with the next generation of quantum developers. Please note that only students of IEM Kolkata and Newtown can apply to be a mentor.
             </p>
 
             <a
