@@ -53,12 +53,15 @@ export const Hero = () => {
             This year’s QFF theme at IEM honors IBM’s 2026 milestone—ten years of quantum computing on the cloud! It creatively connects to a powerful vibrant metaphor: IBM’s quantum chips themselves are named after birds, reflecting how engineers actually tune these machines. In celebrating this milestone, the theme highlights both the evolution of quantum hardware and the flourishing of the global quantum community.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
+          <div className="flex flex-col items-start gap-2.5 mt-8">
             <a href="#registrations">
               <Button variant="ket" className="px-8 py-3 rounded-full">
                 REGISTER NOW
               </Button>
             </a>
+            <span className="font-anton text-xl md:text-2xl tracking-wider uppercase text-[#E0AAFF] drop-shadow-[0_0_12px_rgba(224,170,255,0.4)]">
+              COMING SOON!
+            </span>
           </div>
 
           <div className="font-anton uppercase text-accent-lavender tracking-widest text-sm md:text-base mt-8">
