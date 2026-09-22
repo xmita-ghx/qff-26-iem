@@ -56,7 +56,7 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
             <a href="#registrations">
               <Button variant="ket" className="px-8 py-3 rounded-full">
-                REGISTRATIONS OPEN SEPTEMBER 29, 2026!
+                REGISTRATIONS OPEN SEP 29, 2026!
               </Button>
             </a>
           </div>
