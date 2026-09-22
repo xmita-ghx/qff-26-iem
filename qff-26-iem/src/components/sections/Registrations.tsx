@@ -25,7 +25,7 @@ export const Registrations = () => {
 
             <div className="space-y-8 text-base md:text-lg text-pure-white/80 max-w-2xl mx-auto mb-10 text-left font-urbanist">
               <p className="font-medium text-white/90">
-                Registrations open soon. Stay tuned!
+                Registrations open September 29, 2026. Stay tuned!
               </p>
 
               {/* Subsection: Who can participate? */}
