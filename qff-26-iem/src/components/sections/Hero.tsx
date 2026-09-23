@@ -17,8 +17,15 @@ export const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-start"
         >
-          {/* IBM Quantum & QuantCom Top Logos (Shifted left to align IBM wording with 'Q') */}
-          <div className="flex items-center gap-7 md:gap-9 mb-7 -ml-1.5 md:-ml-2.5">
+          {/* Top Logos: QuantCom, IBM Quantum, and QFF White */}
+          <div className="flex items-center gap-6 md:gap-8 mb-7 -ml-1.5 md:-ml-2.5">
+            <div className="h-14 md:h-20 flex items-center">
+              <img
+                src="/logos/quantcom.png"
+                alt="QuantCom"
+                className="h-full w-auto object-contain brightness-0 invert opacity-95"
+              />
+            </div>
             <div className="h-16 md:h-24 flex items-center">
               <img
                 src="/logos/ibm-quantum.png"
@@ -28,9 +35,9 @@ export const Hero = () => {
             </div>
             <div className="h-14 md:h-20 flex items-center">
               <img
-                src="/logos/quantcom.png"
-                alt="QuantCom"
-                className="h-full w-auto object-contain brightness-0 invert opacity-95"
+                src="/logos/qff-white.png"
+                alt="Qiskit Fall Fest"
+                className="h-full w-auto object-contain opacity-95"
               />
             </div>
           </div>
@@ -66,7 +73,7 @@ export const Hero = () => {
           </div>
           <p className="font-urbanist text-accent-lavender text-sm sm:text-base md:text-lg mt-2 leading-relaxed">
             Come join us this fall! <br className="hidden sm:inline" />
-            At Institute of Engineering and Management, Kolkata or virtually.
+            At Institute of Engineering and Management, Kolkata and virtually.
           </p>
         </motion.div>
       </div>
