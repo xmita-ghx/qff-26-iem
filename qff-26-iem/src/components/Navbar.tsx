@@ -76,7 +76,11 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button variant="ket">REGISTER</Button>
+          <a href="#registrations">
+            <Button variant="ket" className="text-xs uppercase tracking-wider px-5 py-2.5 whitespace-nowrap">
+              REGISTRATIONS OPEN SEP 29, 2026
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -101,9 +105,11 @@ export const Navbar = () => {
               {route.name}
             </a>
           ))}
-          <Button variant="ket" className="w-full mt-4 justify-center">
-            REGISTER
-          </Button>
+          <a href="#registrations" onClick={() => setMobileMenuOpen(false)}>
+            <Button variant="ket" className="w-full mt-4 justify-center text-xs uppercase tracking-wider py-3">
+              REGISTRATIONS OPEN SEP 29, 2026
+            </Button>
+          </a>
         </div>
       )}
     </nav>
