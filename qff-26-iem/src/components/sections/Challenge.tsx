@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const Challenge = () => {
   return (
-    <section id="challenge" className="py-24 relative z-10 border-t border-surface/50">
+    <section id="hackathon" className="py-24 relative z-10 border-t border-surface/50 scroll-mt-20">
       <div className="container mx-auto px-6 max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -16,7 +16,7 @@ export const Challenge = () => {
         >
           {/* Section Heading */}
           <h2 className="font-anton text-4xl md:text-5xl uppercase tracking-wider mb-2">
-            ABOUT THE <span className="text-[#E0AAFF]">CHALLENGE</span>
+            ABOUT THE <span className="text-[#E0AAFF]">HACKATHON</span>
           </h2>
 
           {/* Subtitle / Timeline */}
@@ -35,11 +35,11 @@ export const Challenge = () => {
             </p>
 
             <p>
-              While every sector treats quantum randomness as a catastrophy demanding strict determinism, creativity thrives on it. Superposition, interference, and collapse aren&apos;t bugs here; they are the heartbeat of the canvas itself. A stray glitch in a clinical algorithm is a life-threatening hazard. A stray glitch in a <strong>qreative</strong> beat? That&apos;s the hook!
+              While every sector treats quantum randomness as a catastrophe demanding strict determinism, creativity thrives on it. Superposition, interference, and collapse aren&apos;t bugs here; they are the heartbeat of the canvas itself. A stray glitch in a clinical algorithm is a life-threatening hazard. A stray glitch in a <strong>qreative</strong> beat? That&apos;s the hook!
             </p>
 
             <p className="text-accent-lavender font-medium pt-2">
-              More info about the challenge coming soon!
+              More info about the hackathon coming soon!
             </p>
           </div>
         </motion.div>

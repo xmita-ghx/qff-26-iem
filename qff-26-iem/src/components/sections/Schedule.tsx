@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SCHEDULE } from "@/lib/constants";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { Button } from "@/components/ui/Button";
 
 interface ScheduleEvent {
   time: string;
@@ -29,7 +30,7 @@ export const Schedule = () => {
               <span className="text-sm text-pure-white/60 uppercase tracking-widest mt-1">Days</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-anton text-4xl text-accent-glow">4+</span>
+              <span className="font-anton text-4xl text-accent-glow">6</span>
               <span className="text-sm text-pure-white/60 uppercase tracking-widest mt-1">Tracks</span>
             </div>
             <div className="flex flex-col">
@@ -53,7 +54,7 @@ export const Schedule = () => {
             >
               <span>DAY {index + 1} ({day.date})</span>
               <span className="text-[10px] mt-1 px-2 py-0.5 rounded-full bg-pure-white/20">
-                {index === 0 ? 'IN-PERSON' : 'VIRTUAL'}
+                {index === 0 ? "IN-PERSON" : "VIRTUAL"}
               </span>
             </button>
           ))}
@@ -69,8 +70,7 @@ export const Schedule = () => {
         {/* Schedule List */}
         <GlassCard className="p-8 relative max-h-[600px] overflow-y-auto custom-scrollbar">
           {/* Vertical Timeline Track */}
-          <div className="absolute left-10 md:left-40 top-8 bottom-8 w-1 bg-gradient-to-b from-[#9D4EDD] via-[#E0AAFF] to-[#3C096C] rounded-full hidden sm:block">
-          </div>
+          <div className="absolute left-10 md:left-40 top-8 bottom-8 w-1 bg-gradient-to-b from-[#9D4EDD] via-[#E0AAFF] to-[#3C096C] rounded-full hidden sm:block"></div>
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -129,6 +129,24 @@ export const Schedule = () => {
             </motion.div>
           </AnimatePresence>
         </GlassCard>
+
+        {/* Schedule Bottom Callout & Button */}
+        <div className="mt-12 text-center flex flex-col items-center bg-surface/30 border border-white/10 rounded-2xl p-8 backdrop-blur-md">
+          <p className="font-urbanist text-base md:text-lg text-pure-white/90 leading-relaxed max-w-2xl mb-6">
+            Whether you&apos;re here to learn, connect, <strong className="text-white font-bold">#qreate</strong>, or win big,{" "}
+            <span className="text-[#E0AAFF] font-medium">QFF 2026 at IEM</span> is where it all happens!
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <span className="font-urbanist text-sm uppercase tracking-wider text-[#E0AAFF]/80">
+              Want to learn more?
+            </span>
+            <a href="#hackathon">
+              <Button variant="ket" className="px-6 py-2.5 rounded-full text-xs sm:text-sm uppercase tracking-wider">
+                |About the Hackathon⟩
+              </Button>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

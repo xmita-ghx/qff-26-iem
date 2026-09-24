@@ -17,7 +17,7 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Ensure Challenges appears right after Schedule / View Schedule
+  // Ensure Hackathon appears right after Schedule / View Schedule
   const navItems = React.useMemo(() => {
     const items = [...ROUTES];
     const scheduleIndex = items.findIndex(
@@ -25,13 +25,13 @@ export const Navbar = () => {
         r.name.toLowerCase().includes("schedule") ||
         r.href.includes("schedule")
     );
-    const challengeItem = { name: "Challenges", href: "#challenge" };
+    const hackathonItem = { name: "Hackathon", href: "#hackathon" };
 
-    if (!items.some((r) => r.href === "#challenge")) {
+    if (!items.some((r) => r.href === "#hackathon")) {
       if (scheduleIndex !== -1) {
-        items.splice(scheduleIndex + 1, 0, challengeItem);
+        items.splice(scheduleIndex + 1, 0, hackathonItem);
       } else {
-        items.push(challengeItem);
+        items.push(hackathonItem);
       }
     }
     return items;

@@ -47,6 +47,12 @@ export const SCHEDULE = [
         title: "DR. PRITHWINEEL PAUL", 
         description: "Session 2: QML Introduction Talk + Workshop (On-site session covering QML fundamentals)" 
       },
+      {
+        time: "3:30 PM - 4:00 PM",
+        title: "HAPPY HOUR + QUIZ!",
+        speaker: "Top 3 receive exclusive swags!",
+        description: "Unwind after an intense session of power-packed learning! Grab a #quantum drink, connect with fellow builders, creators and enthusiasts, and face off in a high-speed trivia showdown. Bring your sharpest mind—the top 3 brainiacs walk away with exclusive QFF26 swag! Includes an event photography session right after!"
+      },
     ],
   },
   {
@@ -70,8 +76,8 @@ export const SCHEDULE = [
       },
       { 
         time: "9:30 PM - 10:00 PM", 
-        title: "SPONSOR CHALLENGE", 
-        description: "Challenge Kickoff (Sponsor Challenge Kickoff)" 
+        title: "HACKATHON", 
+        description: "Hackathon Kickoff (Challenge guidelines, rules, and problem statement release)" 
       },
     ],
   },
@@ -80,9 +86,20 @@ export const SCHEDULE = [
     events: [
       { 
         time: "(Previous Day 10:00 PM) - 10:00 PM", 
-        title: "SPONSOR CHALLENGE", 
-        description: "Challenge (Sponsor Challenge: Participants submit solutions/ideas; prizes awarded based on results. Challenge ends, 3 winners announced, top 5 receive recognition, and leaderboard released)" 
+        title: "HACKATHON", 
+        description: "24-Hour Virtual Hackathon: Participants build and submit creative quantum solutions; projects judged across innovation and technical execution." 
       },
+      {
+        time: "10:00 PM - 10:30 PM",
+        title: "HAPPY HOUR + QUIZ!",
+        speaker: "Top 3 receive special recognition!",
+        description: "You’ve pushed your limits, coded through the night, and built incredible quantum solutions—now it’s time to celebrate! Cross the hackathon finish line with a fun, interactive wind-down quiz. Cap off 24 hours of hacking with an energetic social quiz, claim bragging rights and get recognized on stage before the final curtain call!"
+      },
+      {
+        time: "POST-EVENT",
+        title: "HACKATHON RESULTS AND ANNOUNCEMENTS",
+        description: "Winners announced within 24 hours of submission + spotlighted across all our official socials!"
+      }
     ],
   },
 ];
@@ -95,6 +112,14 @@ export const TRACKS = [
   {
     title: "Quantum Machine Learning",
     description: "Deep dives into quantum algorithms and their applications.",
+  },
+  {
+    title: "Hackathon",
+    description: "A 24-hour creative virtual sprint building innovative quantum projects and error-resilient applications.",
+  },
+  {
+    title: "Expert Talks",
+    description: "Insightful talks from quantum researchers and industry pioneers bridging physical hardware and logical algorithms.",
   },
   {
     title: "Hardware",

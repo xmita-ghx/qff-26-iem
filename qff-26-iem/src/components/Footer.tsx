@@ -32,7 +32,7 @@ export const Footer = () => {
             <ul className="space-y-2 text-pure-white/70">
               <li><a href="#about" className="hover:text-pure-white transition-colors">About the Event</a></li>
               <li><a href="#schedule" className="hover:text-pure-white transition-colors">Schedule</a></li>
-              <li><a href="#challenge" className="hover:text-pure-white transition-colors">Challenges</a></li>
+              <li><a href="#hackathon" className="hover:text-pure-white transition-colors">Hackathon</a></li>
               <li><a href="#tracks" className="hover:text-pure-white transition-colors">Tracks</a></li>
               <li><a href="#mentor" className="hover:text-pure-white transition-colors">Call for Mentors</a></li>
               <li><a href="#team" className="hover:text-pure-white transition-colors">Team</a></li>
