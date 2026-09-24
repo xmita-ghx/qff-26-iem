@@ -32,7 +32,7 @@ export const Team = () => {
               <div className="flex items-start justify-between gap-2">
                 <div>
                   <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Asmita Ghorai</h3>
-                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Lead Organizer, Technical Head</p>
+                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Lead Organizer</p>
                 </div>
                 <a
                   href="https://www.linkedin.com/in/asmita-ghorai-a613563a5"
@@ -59,7 +59,7 @@ export const Team = () => {
               <div className="flex items-start justify-between gap-2">
                 <div>
                   <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">Arna Roy</h3>
-                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Co-Organizer, Operations Lead</p>
+                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">Co-Organizer</p>
                 </div>
                 <a
                   href="https://www.linkedin.com/in/arna-roy-0a839a366"
