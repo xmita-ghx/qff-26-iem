@@ -8,8 +8,11 @@ import { LINKS } from "@/lib/constants";
 import { MessageSquare } from "lucide-react";
 
 export const Registrations = () => {
+  const registrationUrl =
+    LINKS.registrationForm || "https://forms.gle/LuS4ryGyBtPfTfBx5";
+
   return (
-    <section id="registrations" className="py-24 relative z-10">
+    <section id="registrations" className="py-24 relative z-10 scroll-mt-16">
       <div className="container mx-auto px-6 space-y-16">
         {/* Registrations Card */}
         <motion.div
@@ -25,7 +28,7 @@ export const Registrations = () => {
 
             <div className="space-y-8 text-base md:text-lg text-pure-white/80 max-w-2xl mx-auto mb-10 text-left font-urbanist">
               <p className="font-medium text-white/90">
-                Registrations open September 29, 2026. Stay tuned!
+                Registration is open now!
               </p>
 
               {/* Subsection: Who can participate? */}
@@ -84,9 +87,16 @@ export const Registrations = () => {
               Seats are limited for Day 1 (In-Person). Early registration is highly recommended.
             </p>
 
-            <Button variant="ket" className="mx-auto">
-              REGISTER NOW
-            </Button>
+            <a
+              href={registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button variant="ket" className="mx-auto">
+                REGISTER NOW
+              </Button>
+            </a>
           </GlassCard>
         </motion.div>
 

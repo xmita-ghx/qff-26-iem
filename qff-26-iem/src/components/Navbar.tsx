@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ROUTES } from "@/lib/constants";
+import { ROUTES, LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
 
@@ -37,6 +37,9 @@ export const Navbar = () => {
     return items;
   }, []);
 
+  const registrationUrl =
+    LINKS.registrationForm || "https://forms.gle/LuS4ryGyBtPfTfBx5";
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -58,7 +61,9 @@ export const Navbar = () => {
                 }}
               />
             </div>
-            <span className="font-anton text-xl tracking-wider text-white">QFF 2026</span>
+            <span className="font-anton text-xl tracking-wider text-white">
+              QFF 2026
+            </span>
           </div>
         </a>
 
@@ -76,9 +81,16 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
-          <a href="#registrations">
-            <Button variant="ket" className="text-xs uppercase tracking-wider px-5 py-2.5 whitespace-nowrap">
-              REGISTRATIONS OPEN SEP 29, 2026
+          <a
+            href={registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              variant="ket"
+              className="text-xs uppercase tracking-wider px-5 py-2.5 whitespace-nowrap"
+            >
+              REGISTER NOW
             </Button>
           </a>
         </div>
@@ -105,9 +117,17 @@ export const Navbar = () => {
               {route.name}
             </a>
           ))}
-          <a href="#registrations" onClick={() => setMobileMenuOpen(false)}>
-            <Button variant="ket" className="w-full mt-4 justify-center text-xs uppercase tracking-wider py-3">
-              REGISTRATIONS OPEN SEP 29, 2026
+          <a
+            href={registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <Button
+              variant="ket"
+              className="w-full mt-4 justify-center text-xs uppercase tracking-wider py-3"
+            >
+              REGISTER NOW
             </Button>
           </a>
         </div>

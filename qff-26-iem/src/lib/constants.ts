@@ -17,12 +17,14 @@ export const LINKS = {
   discord: "https://discord.gg/cqcYqYFYm",
   linkedin: "https://www.linkedin.com/company/qiskit-fall-fest-2026-iem",
   mentorForm: "https://forms.gle/xak22KHJq5ijn1D68",
+  registrationForm: "https://forms.gle/LuS4ryGyBtPfTfBx5",
   instagram: "https://www.instagram.com/qiskitfallfestiem?stkn=MWs5bm5vMXk2aDViZw",
 };
 
 export const ROUTES = [
   { name: "Register Now", href: "#registrations" },
   { name: "View Schedule", href: "#schedule" },
+  { name: "Hackathon", href: "#hackathon" },
   { name: "Apply as Mentor", href: "#mentor" },
   { name: "Join Discord", href: "#discord" },
   { name: "Team", href: "#team" },
@@ -50,7 +52,7 @@ export const SCHEDULE = [
       {
         time: "3:30 PM - 4:00 PM",
         title: "HAPPY HOUR + QUIZ!",
-        speaker: "Top 3 receive exclusive swags!",
+        speaker: "Top 3 receive exclusive swag!",
         description: "Unwind after an intense session of power-packed learning! Grab a #quantum drink, connect with fellow builders, creators and enthusiasts, and face off in a high-speed trivia showdown. Bring your sharpest mind—the top 3 brainiacs walk away with exclusive QFF26 swag! Includes an event photography session right after!"
       },
     ],

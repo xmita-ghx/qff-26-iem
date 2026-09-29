@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { EVENT_DETAILS } from "@/lib/constants";
+import { LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { HeroQuantumCanvas } from "@/components/canvas/HeroQuantumCanvas";
 
@@ -61,9 +61,13 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
-            <a href="#registrations">
+            <a
+              href={LINKS.registrationForm || "https://forms.gle/LuS4ryGyBtPfTfBx5"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="ket" className="px-8 py-3 rounded-full">
-                REGISTRATIONS OPEN SEP 29, 2026!
+                REGISTER NOW
               </Button>
             </a>
           </div>
