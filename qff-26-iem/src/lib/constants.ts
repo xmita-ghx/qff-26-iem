@@ -14,7 +14,7 @@ export const EVENT_DETAILS = {
 };
 
 export const LINKS = {
-  discord: "https://discord.gg/cqcYqYFYm",
+  discord: "https://discord.gg/2Z535c8UNv",
   linkedin: "https://www.linkedin.com/company/qiskit-fall-fest-2026-iem",
   mentorForm: "https://forms.gle/xak22KHJq5ijn1D68",
   registrationForm: "https://forms.gle/LuS4ryGyBtPfTfBx5",
