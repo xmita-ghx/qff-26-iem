@@ -18,10 +18,10 @@ export const Team = () => {
             TEAM
           </h2>
 
-          {/* Student Organizers: 2 cols on mobile with Tousif centered on row 2, 3 cols on desktop */}
+          {/* Student Organizers: 2 columns on mobile, 3 columns on desktop */}
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-left mb-8 md:mb-12">
             {/* Card 1: Asmita Ghorai */}
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
               <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
                 <img
                   src="/team/asmita-ghorai.png"
@@ -54,7 +54,7 @@ export const Team = () => {
             </div>
 
             {/* Card 2: Arna Roy */}
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
               <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
                 <img
                   src="/team/arna-roy.png"
@@ -86,8 +86,8 @@ export const Team = () => {
               </div>
             </div>
 
-            {/* Card 3: Tousif Aman Halder */}
-            <div className="flex flex-col col-span-2 lg:col-span-1 max-w-[280px] w-full mx-auto lg:max-w-none">
+            {/* Card 3: Tousif Aman Halder - Centers on row 2 for mobile, matches exact 1-col size */}
+            <div className="flex flex-col col-span-2 justify-self-center w-[calc(50%-0.75rem)] lg:col-span-1 lg:w-full">
               <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
                 <img
                   src="/team/tousif-aman-halder.png"
@@ -123,7 +123,7 @@ export const Team = () => {
           {/* Faculty Advisors: 2 cols on mobile (row 3) & 2 centered cards on desktop (row 2) */}
           <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-2xl mx-auto text-left">
             {/* Card 4: Dr. Moutushi Singh */}
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
               <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
                 <img
                   src="/team/moutushi-singh.png"
@@ -159,7 +159,7 @@ export const Team = () => {
             </div>
 
             {/* Card 5: Dr. Prithwineel Paul */}
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
               <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
                 <img
                   src="/team/prithwineel-paul.png"
