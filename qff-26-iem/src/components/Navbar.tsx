@@ -17,23 +17,33 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Ensure Hackathon appears right after Schedule / View Schedule
+  // Ensure Hackathon points to Devpost and appears right after Schedule
   const navItems = React.useMemo(() => {
+    const devpostUrl =
+      (LINKS as any).devpost ||
+      "https://atomiq-hackathon-qff-26-iem.devpost.com";
+
     const items = [...ROUTES];
     const scheduleIndex = items.findIndex(
       (r) =>
         r.name.toLowerCase().includes("schedule") ||
         r.href.includes("schedule")
     );
-    const hackathonItem = { name: "Hackathon", href: "#hackathon" };
+    const hackathonItem = {
+      name: "Hackathon",
+      href: devpostUrl,
+      external: true,
+    };
 
-    if (!items.some((r) => r.href === "#hackathon")) {
-      if (scheduleIndex !== -1) {
-        items.splice(scheduleIndex + 1, 0, hackathonItem);
-      } else {
-        items.push(hackathonItem);
-      }
+    const existingIndex = items.findIndex((r) => r.name === "Hackathon");
+    if (existingIndex !== -1) {
+      items[existingIndex] = hackathonItem;
+    } else if (scheduleIndex !== -1) {
+      items.splice(scheduleIndex + 1, 0, hackathonItem);
+    } else {
+      items.push(hackathonItem);
     }
+
     return items;
   }, []);
 
@@ -70,16 +80,23 @@ export const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-6">
-            {navItems.map((route) => (
-              <li key={route.name}>
-                <a
-                  href={route.href}
-                  className="text-sm font-medium text-pure-white/80 hover:text-accent-lavender transition-colors"
-                >
-                  {route.name}
-                </a>
-              </li>
-            ))}
+            {navItems.map((route) => {
+              const isExternal =
+                (route as any).external || route.href.startsWith("http");
+              return (
+                <li key={route.name}>
+                  <a
+                    href={route.href}
+                    {...(isExternal
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className="text-sm font-medium text-pure-white/80 hover:text-accent-lavender transition-colors"
+                  >
+                    {route.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <a
             href={registrationUrl}
@@ -107,16 +124,23 @@ export const Navbar = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-deep-base/95 backdrop-blur-xl border-b border-surface p-6 md:hidden flex flex-col gap-4">
-          {navItems.map((route) => (
-            <a
-              key={route.name}
-              href={route.href}
-              className="text-lg font-medium text-pure-white hover:text-accent-lavender"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {route.name}
-            </a>
-          ))}
+          {navItems.map((route) => {
+            const isExternal =
+              (route as any).external || route.href.startsWith("http");
+            return (
+              <a
+                key={route.name}
+                href={route.href}
+                {...(isExternal
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className="text-lg font-medium text-pure-white hover:text-accent-lavender"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {route.name}
+              </a>
+            );
+          })}
           <a
             href={registrationUrl}
             target="_blank"

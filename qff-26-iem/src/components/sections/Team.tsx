@@ -7,7 +7,7 @@ import { Linkedin } from "lucide-react";
 export const Team = () => {
   return (
     <section id="team" className="py-24 relative z-10">
-      <div className="container mx-auto px-6 max-w-5xl text-center">
+      <div className="container mx-auto px-6 max-w-6xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -18,8 +18,8 @@ export const Team = () => {
             TEAM
           </h2>
 
-          {/* Student Organizers: 2 columns on mobile, 3 columns on desktop */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-left mb-8 md:mb-12">
+          {/* Student Organizers: 2 columns on mobile (2 rows of 2), 4 columns on desktop (1 row of 4) */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-left mb-8 md:mb-12">
             {/* Card 1: Asmita Ghorai */}
             <div className="flex flex-col w-full">
               <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
@@ -86,8 +86,8 @@ export const Team = () => {
               </div>
             </div>
 
-            {/* Card 3: Tousif Aman Halder - Centers on row 2 for mobile, matches exact 1-col size */}
-            <div className="flex flex-col col-span-2 justify-self-center w-[calc(50%-0.75rem)] lg:col-span-1 lg:w-full">
+            {/* Card 3: Tousif Aman Halder */}
+            <div className="flex flex-col w-full">
               <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
                 <img
                   src="/team/tousif-aman-halder.png"
@@ -118,11 +118,44 @@ export const Team = () => {
                 </a>
               </div>
             </div>
+
+            {/* Card 4: Sormista Pal */}
+            <div className="flex flex-col w-full">
+              <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
+                <img
+                  src="/team/sormista-pal.png"
+                  alt="Sormista Pal"
+                  className="object-cover w-full h-full"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+              </div>
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <h3 className="font-anton text-white tracking-wide text-lg sm:text-xl md:text-2xl uppercase">
+                    Sormista Pal
+                  </h3>
+                  <p className="font-urbanist text-white/80 text-xs sm:text-sm">
+                    Co-Organizer
+                  </p>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/sormista-pal-a52574307"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:border-[#E0AAFF] hover:text-[#E0AAFF] transition-all flex-shrink-0"
+                >
+                  <Linkedin size={16} />
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Faculty Advisors: 2 cols on mobile (row 3) & 2 centered cards on desktop (row 2) */}
+          {/* Faculty Advisors: Row 3 on mobile (2 cards), Row 2 on desktop (2 centered cards) */}
           <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-2xl mx-auto text-left">
-            {/* Card 4: Dr. Moutushi Singh */}
+            {/* Card 5: Dr. Moutushi Singh */}
             <div className="flex flex-col w-full">
               <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
                 <img
@@ -158,7 +191,7 @@ export const Team = () => {
               </div>
             </div>
 
-            {/* Card 5: Dr. Prithwineel Paul */}
+            {/* Card 6: Dr. Prithwineel Paul */}
             <div className="flex flex-col w-full">
               <div className="aspect-square w-full rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-4 flex items-center justify-center relative">
                 <img

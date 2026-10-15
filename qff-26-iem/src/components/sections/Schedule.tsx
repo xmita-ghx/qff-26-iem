@@ -9,8 +9,10 @@ import { Button } from "@/components/ui/Button";
 interface ScheduleEvent {
   time: string;
   title: string;
+  speakerLabel?: string;
   speaker?: string;
   description?: string;
+  highlight?: string;
   focusAreas?: string[];
 }
 
@@ -96,15 +98,24 @@ export const Schedule = () => {
                       {event.title}
                     </h4>
 
-                    {event.speaker && (
-                      <p className="text-xs font-semibold uppercase tracking-wider text-accent-lavender/90 mt-1">
-                        {event.speaker}
+                    {/* Speaker label & name display */}
+                    {(event.speakerLabel || event.speaker) && (
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[#E0AAFF] mt-1">
+                        {event.speakerLabel ? `${event.speakerLabel} ` : ""}
+                        {event.speaker && <span className="text-white/90">{event.speaker}</span>}
                       </p>
                     )}
 
                     {event.description && (
                       <p className="text-sm text-pure-white/70 mt-2 font-urbanist leading-relaxed">
                         {event.description}
+                      </p>
+                    )}
+
+                    {/* Pale purple highlight sentence */}
+                    {event.highlight && (
+                      <p className="text-sm font-medium text-[#E0AAFF] mt-2 font-urbanist">
+                        {event.highlight}
                       </p>
                     )}
 
