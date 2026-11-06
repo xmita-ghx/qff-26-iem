@@ -44,7 +44,7 @@ export const SCHEDULE = [
         time: "11:00 AM - 1:00 PM", 
         title: "QUANTUM INTRODUCTION + QISKIT 101",
         speakerLabel: "SPEAKER:",
-        speaker: "",
+        speaker: "DR. KAVITHA YOGARAJ",
         description: "Session 1: Expert Talk + Workshop (Quantum Computing Introduction + Qiskit 101)" 
       },
       { 
@@ -56,14 +56,14 @@ export const SCHEDULE = [
         time: "2:00 PM - 3:00 PM", 
         title: "TRANSPILATION",
         speakerLabel: "SPEAKER:",
-        speaker: "",
+        speaker: "DR. RITAJIT MAJUMDAR",
         description: "Session 2: Expert Talk — Deep dive into Qiskit transpilation passes, circuit optimization, layout selection, basis gate mapping, and reducing swap overhead for noisy quantum architectures."
       },
       { 
         time: "3:30 PM - 4:30 PM", 
         title: "QUANTUM MACHINE LEARNING",
         speakerLabel: "SPEAKER:",
-        speaker: "",
+        speaker: "AMITAVA CHAKRABORTY",
         description: "Session 3: Expert Talk + Hands-On Workshop — Exploring parameterized quantum circuits (PQCs), quantum kernels, feature maps, and hybrid quantum-classical training routines using Qiskit Machine Learning."
       },
       {
