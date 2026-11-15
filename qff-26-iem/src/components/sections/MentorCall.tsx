@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Button } from "@/components/ui/Button";
-import { EVENT_DETAILS } from "@/lib/constants";
+import { EVENT_DETAILS, LINKS } from "@/lib/constants";
 import { Calendar } from "lucide-react";
 
 export const MentorCall = () => {
@@ -25,17 +25,26 @@ export const MentorCall = () => {
               </span>
             </div>
 
-            <h2 className="font-anton text-4xl md:text-5xl uppercase tracking-wider mb-6">
-              <span className="text-accent-lavender">⟨</span> Call for Mentors <span className="text-accent-lavender">|⟩</span>
+            <h2 className="text-4xl md:text-5xl tracking-wider mb-6 flex justify-center items-center">
+              <span className="font-montserrat font-light text-accent-lavender mr-2">|</span>
+              <span className="font-anton uppercase">CALL FOR MENTORS</span>
+              <span className="font-montserrat font-light text-accent-lavender ml-2">⟩</span>
             </h2>
 
             <p className="text-lg text-pure-white/80 max-w-2xl mx-auto mb-10">
-              Are you experienced in quantum computing, Qiskit, or quantum algorithms? Join us as a mentor to guide teams, review projects, and share your expertise with the next generation of quantum developers.
+              Are you experienced in quantum computing, Qiskit, or quantum machine learning? Join us as a mentor to guide teams, review projects, and share your expertise with the next generation of quantum developers and unlock exclusive perks!
             </p>
 
-            <Button variant="primary" className="text-lg px-10 py-4 font-bold shadow-[0_0_30px_rgba(157,78,221,0.4)]">
-              Apply to Mentor
-            </Button>
+            <a
+              href={LINKS.mentorForm}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button variant="ket" className="mx-auto">
+                |APPLY AS MENTOR⟩
+              </Button>
+            </a>
           </GlassCard>
         </motion.div>
       </div>

@@ -29,21 +29,24 @@ export const Tracks = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 6-card grid: 1 col on mobile, 2 on tablet, 3 on desktop for a clean 3x2 balance */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {TRACKS.map((track, index) => (
             <motion.div
               key={track.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
             >
               <GlassCard className="h-full group hover:-translate-y-2 transition-transform duration-300">
                 <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center mb-6 group-hover:bg-accent-vibrant transition-colors">
-                  <span className="font-anton text-xl text-pure-white">{index + 1}</span>
+                  <span className="font-anton text-xl text-pure-white">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <h3 className="text-xl font-bold mb-3">{track.title}</h3>
-                <p className="text-pure-white/70 leading-relaxed">
+                <p className="text-pure-white/70 leading-relaxed font-urbanist">
                   {track.description}
                 </p>
               </GlassCard>

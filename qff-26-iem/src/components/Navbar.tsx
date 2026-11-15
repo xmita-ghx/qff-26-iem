@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ROUTES } from "@/lib/constants";
+import { ROUTES, LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
 
@@ -17,6 +17,39 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Ensure Hackathon points to Devpost and appears right after Schedule
+  const navItems = React.useMemo(() => {
+    const devpostUrl =
+      (LINKS as any).devpost ||
+      "https://atomiq-hackathon-qff-26-iem.devpost.com";
+
+    const items = [...ROUTES];
+    const scheduleIndex = items.findIndex(
+      (r) =>
+        r.name.toLowerCase().includes("schedule") ||
+        r.href.includes("schedule")
+    );
+    const hackathonItem = {
+      name: "Hackathon",
+      href: devpostUrl,
+      external: true,
+    };
+
+    const existingIndex = items.findIndex((r) => r.name === "Hackathon");
+    if (existingIndex !== -1) {
+      items[existingIndex] = hackathonItem;
+    } else if (scheduleIndex !== -1) {
+      items.splice(scheduleIndex + 1, 0, hackathonItem);
+    } else {
+      items.push(hackathonItem);
+    }
+
+    return items;
+  }, []);
+
+  const registrationUrl =
+    LINKS.registrationForm || "https://forms.gle/LuS4ryGyBtPfTfBx5";
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -27,26 +60,56 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 group">
-          <span className="font-anton text-2xl tracking-widest text-pure-white group-hover:text-accent-lavender transition-colors">
-            QFF 2026
-          </span>
+          <div className="flex items-center gap-3">
+            <div className="relative w-9 h-9 md:w-10 md:h-10 rounded-lg overflow-hidden border border-white/15 bg-white/5 flex items-center justify-center flex-shrink-0">
+              <img
+                src="/logos/navbar-logo.png"
+                alt="QFF Logo"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+              />
+            </div>
+            <span className="font-anton text-xl tracking-wider text-white">
+              QFF 2026
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-6">
-            {ROUTES.map((route) => (
-              <li key={route.name}>
-                <a
-                  href={route.href}
-                  className="text-sm font-medium text-pure-white/80 hover:text-accent-lavender transition-colors"
-                >
-                  {route.name}
-                </a>
-              </li>
-            ))}
+            {navItems.map((route) => {
+              const isExternal =
+                (route as any).external || route.href.startsWith("http");
+              return (
+                <li key={route.name}>
+                  <a
+                    href={route.href}
+                    {...(isExternal
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className="text-sm font-medium text-pure-white/80 hover:text-accent-lavender transition-colors"
+                  >
+                    {route.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
-          <Button variant="ket">Register</Button>
+          <a
+            href={registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              variant="ket"
+              className="text-xs uppercase tracking-wider px-5 py-2.5 whitespace-nowrap"
+            >
+              REGISTER NOW
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -61,19 +124,36 @@ export const Navbar = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-deep-base/95 backdrop-blur-xl border-b border-surface p-6 md:hidden flex flex-col gap-4">
-          {ROUTES.map((route) => (
-            <a
-              key={route.name}
-              href={route.href}
-              className="text-lg font-medium text-pure-white hover:text-accent-lavender"
-              onClick={() => setMobileMenuOpen(false)}
+          {navItems.map((route) => {
+            const isExternal =
+              (route as any).external || route.href.startsWith("http");
+            return (
+              <a
+                key={route.name}
+                href={route.href}
+                {...(isExternal
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                className="text-lg font-medium text-pure-white hover:text-accent-lavender"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {route.name}
+              </a>
+            );
+          })}
+          <a
+            href={registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <Button
+              variant="ket"
+              className="w-full mt-4 justify-center text-xs uppercase tracking-wider py-3"
             >
-              {route.name}
-            </a>
-          ))}
-          <Button variant="ket" className="w-full mt-4">
-            Register Now
-          </Button>
+              REGISTER NOW
+            </Button>
+          </a>
         </div>
       )}
     </nav>
